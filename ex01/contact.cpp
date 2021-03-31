@@ -10,10 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 
-Contact::Contact()
+Contact::Contact(void)
 {
-    std::cout << "Construction d'un contact\n" << std::endl;
+	std::cout << "Construction d'un contact" << std::endl;
+	nbr_contact = 0;
+	return ;
 }
+
+Contact::~Contact(void)
+{
+	std::cout << "Deconstruction d'un contact" << std::endl;
+	return ;
+}
+
+/* void    Contact::add(std::string cmd)
+{
+	if (this->nbr_contact == 8)
+	{
+		std::cout << "the PhoneBook is full Sorry" << std::endl;
+		return ;
+	}
+	
+} */
