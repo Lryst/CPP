@@ -12,7 +12,7 @@
 
 #ifndef CONTACT_H
 # define CONTACT_H
-# include "PhoneBook.hpp"
+//# include "PhoneBook.hpp"
 # include <iostream>
 
 class Contact
@@ -31,8 +31,8 @@ class Contact
 		std::string favorite_meal;
 		std::string underwear_color;
 		std::string darkest_secret;
-		Contact(void);
-		~Contact(void);
+		//Contact(void);
+		//~Contact(void);
 		void	add(std::string cmd);
 };
 

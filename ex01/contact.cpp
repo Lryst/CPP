@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
+//#include <iostream>
 
-Contact::Contact(void)
+/* Contact::Contact(void)
 {
 	std::cout << "Construction d'un contact" << std::endl;
 	nbr_contact = 0;
@@ -24,7 +24,7 @@ Contact::~Contact(void)
 {
 	std::cout << "Deconstruction d'un contact" << std::endl;
 	return ;
-}
+} */
 
 /* void    Contact::add(std::string cmd)
 {

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:44 by lryst             #+#    #+#             */
-/*   Updated: 2021/03/31 17:50:01 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/01 11:52:53 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,13 @@
 class PhoneBook
 {
 private:
-    int     index;
-    Contact tab[7];
+	int     index;
+	Contact tab[8];
 public:
-    PhoneBook(/* args */);
-    ~PhoneBook();
-    void    add_contact();
-    void    print_contact(int index);
+	void    add_contact();
+	void    print_contact(int index);
+	//PhoneBook();
+	//~PhoneBook();
 };
-
-PhoneBook::PhoneBook(/* args */)
-{
-    this->index = 0;
-}
-
-PhoneBook::~PhoneBook()
-{
-}
 
 #endif

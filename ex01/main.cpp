@@ -6,11 +6,11 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:48:38 by lryst             #+#    #+#             */
-/*   Updated: 2021/03/31 17:49:18 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/01 11:56:40 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+//#include <iostream>
 #include "PhoneBook.hpp"
 
 int main()
@@ -21,12 +21,16 @@ int main()
     std::cout << "-------------------------" << "\n";
     std::cout << "Welcome to my PhoneBook !" << "\n";
     std::cout << "-------------------------" << "\n\n";
-    std::cout << "Please enter a command : ";
+    /* std::cout << "Please enter a command : ";
     std::cin >> cmd;
     
-    std::cout << "Command : " << cmd << std::endl;
+    std::cout << "Command : " << cmd << std::endl; */
     while (1)
     {
+        std::cout << "Please enter a command : ";
+        std::cin >> cmd;
+        
+        //std::cout << "Command : " << cmd << std::endl;
         if (cmd == "ADD")
         {
             std::cin.clear();
@@ -34,18 +38,17 @@ int main()
             instance.add_contact();
             instance.print_contact(0);
         }
-       /*  else if (cmd == "SEARCH")
+        else if (cmd == "SEARCH")
             std::cout << "What contact are you looking for ?" << std::endl;
         else if (cmd == "EXIT")
         {
-            std::cout << "All contact are deleted" << "\n";
-            std::cout << "GoodBye !" << std::endl;
+            std::cout << "All contact are deleted, GoodBye !" << std::endl;
             return (0);
         }
         else
         {
-            std::cout << "Sorry this command is invalid. Let's try ADD, SEARCH or EXIT." << std::endl;
-        } */
+            std::cout << "Sorry, " << cmd <<" is invalid. Let's try ADD, SEARCH or EXIT." << std::endl;
+        }
         
     }
     

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:56 by lryst             #+#    #+#             */
-/*   Updated: 2021/03/31 17:54:05 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/01 11:53:13 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,23 @@ void    PhoneBook::add_contact()
 		std::cin >> tab[index].darkest_secret;
 		index++;
 	}
+	return ;
 }
 
 void	PhoneBook::print_contact(int index)
 {
 	std::cout << tab[index].first_name <<std::endl;
 }
+
+/* PhoneBook::PhoneBook()
+{
+	std::cout << "construction du PhoneBook" << std::endl;
+	index = 0;
+	return;
+}
+
+PhoneBook::~PhoneBook()
+{
+	std::cout << "deconstrution du PhoneBook" << std::endl;
+	return ;
+} */
