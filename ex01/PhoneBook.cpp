@@ -46,6 +46,20 @@ void    PhoneBook::add_contact()
 void	PhoneBook::print_contact(int index)
 {
 	std::cout << tab[index].first_name <<std::endl;
+	std::cout << tab[index].last_name <<std::endl;
+	std::cout << tab[index].nickname <<std::endl;
+	std::cout << tab[index].login <<std::endl;
+	std::cout << tab[index].postal_adress <<std::endl;
+	std::cout << tab[index].phone_number <<std::endl;
+	std::cout << tab[index].birthday_date <<std::endl;
+	std::cout << tab[index].favorite_meal <<std::endl;
+	std::cout << tab[index].underwear_color <<std::endl;
+	std::cout << tab[index].darkest_secret <<std::endl;
+}
+
+void	PhoneBook::search_contact()
+{
+
 }
 
 /* PhoneBook::PhoneBook()

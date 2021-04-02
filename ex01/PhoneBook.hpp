@@ -23,6 +23,7 @@ private:
 public:
 	void    add_contact();
 	void    print_contact(int index);
+	void	search_contact();
 	//PhoneBook();
 	//~PhoneBook();
 };
