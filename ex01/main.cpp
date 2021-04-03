@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:48:38 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/01 11:56:40 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/03 17:54:02 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ int main()
             std::cin.clear();
             std::cout << "Okey ! Let's add a contact !" << std::endl;
             instance.add_contact();
-            instance.print_contact(0);
+            std::cout << "Contact created" << std::endl;
+            //instance.print_contact(0);
         }
         else if (cmd == "SEARCH")
-            std::cout << "What contact are you looking for ?" << std::endl;
+        {
+            instance.search_contact();
+        }
         else if (cmd == "EXIT")
         {
             std::cout << "All contact are deleted, GoodBye !" << std::endl;

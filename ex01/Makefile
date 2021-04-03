@@ -4,13 +4,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = PhoneBook
 
-#HEADERS = megaphone.h
-
-#INCLUDES = -I 
-
 SRCS =	main.cpp \
+		contact.cpp \
+		PhoneBook.cpp \
 
-#OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
