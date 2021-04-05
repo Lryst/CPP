@@ -28,7 +28,7 @@ class Contact
 		std::string favorite_meal;
 		std::string underwear_color;
 		std::string darkest_secret;
-		public:
+	public:
 		void display();
 		std::string get_first_name();
 		std::string get_last_name();
