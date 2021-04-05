@@ -25,8 +25,6 @@ public:
 	void    print_contact(int index);
 	void	search_contact();
 	void	check_line(std::string str);
-	//PhoneBook();
-	//~PhoneBook();
 };
 
 #endif

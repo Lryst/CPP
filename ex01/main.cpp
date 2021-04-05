@@ -29,9 +29,8 @@ int main()
         if (cmd == "ADD")
         {
             std::cin.clear();
-            std::cout << "Okey ! Let's add a contact !" << std::endl;
+            
             instance.add_contact();
-            std::cout << "Contact created" << std::endl;
         }
         else if (cmd == "SEARCH")
         {
