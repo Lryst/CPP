@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:48:38 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/04 16:38:27 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/06 14:26:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,9 @@ int main()
     while (1)
     {
         std::cout << "Please enter a command : ";
-        std::cin >> cmd;
-        
+        std::getline(std::cin, cmd);
         if (cmd == "ADD")
         {
-            std::cin.clear();
-            
             instance.add_contact();
         }
         else if (cmd == "SEARCH")

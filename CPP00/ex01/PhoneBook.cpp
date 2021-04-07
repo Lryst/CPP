@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:56 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/03 18:07:48 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/06 14:30:21 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,43 +26,43 @@ void    PhoneBook::add_contact()
 	{
 		std::cout << "Okey ! Let's add a contact !" << std::endl;
 		std::cout << "First name :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_first_name(cmd);
 
 		std::cout << "Last name :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_last_name(cmd);
 
 		std::cout << "Nickname :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_nickname(cmd);
 
 		std::cout << "Login :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_login(cmd);
 
 		std::cout << "Postal adress :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_postal_adress(cmd);
 
 		std::cout << "Phone number :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_phone_number(cmd);
 
 		std::cout << "birthday_date :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_birthday_date(cmd);
 
 		std::cout << "Favorite meal :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_favorite_meal(cmd);
 
 		std::cout << "Underwear color :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_underwear_color(cmd);
 
 		std::cout << "Darkest secret :";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		tab[m_index].set_darkest_secret(cmd);
         std::cout << "Contact created" << std::endl;
 		m_index++;
