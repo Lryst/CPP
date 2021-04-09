@@ -28,7 +28,7 @@ void Contact::Contact::display()
 
 std::string Contact::get_first_name()
 {
-	return this->last_name;
+	return this->first_name;
 }
 
 std::string Contact::get_last_name()

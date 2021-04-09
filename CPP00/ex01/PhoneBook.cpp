@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:56 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/06 14:30:21 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/09 10:20:49 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,6 @@ void	PhoneBook::search_contact()
 		std::cout << "What contact are you looking for ?" << std::endl;
 		std::cin >> index;
 		print_contact(index);
+		std::cin.ignore();
 	}
 }
