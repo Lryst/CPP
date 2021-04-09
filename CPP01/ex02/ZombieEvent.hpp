@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 17:14:03 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/05 17:30:25 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/09 14:30:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 class ZombieEvent
 {
+	private :
+		std::string _name;
+		std::string _type;
 	public :
-		void	setZombieType()
-}
+		void	newZombie(std::string name);
+		void 	*newZombie(std::string name);
+};
+
+#endif

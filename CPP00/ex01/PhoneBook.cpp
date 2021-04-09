@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:56 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/09 10:20:49 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/09 15:36:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,8 @@ void	PhoneBook::check_line(std::string str)
 	len = str.length();
 	if (len > 10)
 	{
-		std::string tmp = str.substr(0,10);
-		tmp.back() = '.';
-		std::cout << tmp << "|";
+		std::string tmp = str.substr(0,9);
+		std::cout << tmp << ".|";
 	}
 	else
 	{
