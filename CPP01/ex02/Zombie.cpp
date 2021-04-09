@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 16:35:25 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/09 14:20:40 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/09 17:01:14 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,19 @@ void	Zombie::set_name(std::string name)
 
 void	Zombie::set_type(std::string type)
 {
+	this->_type = type;
+}
+
+Zombie::~Zombie()
+{
+}
+
+Zombie::Zombie()
+{
+}
+
+Zombie::Zombie(std::string name, std::string type)
+{
+	this->_name = name;
 	this->_type = type;
 }
