@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 17:39:20 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/10 15:04:14 by lryst            ###   ########.fr       */
+/*   Created: 2021/04/10 15:21:27 by lryst             #+#    #+#             */
+/*   Updated: 2021/04/10 16:15:51 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include <iostream>
 
 int main()
 {
-    ZombieHorde horde(4);
-    system ("leaks a.out");
-    return (0);
+    std::string str;
+    str = "HI THIS IS BRAIN";
+    std::string* str_ptr = &str;
+    std::string& str_ref = str;
+    std::cout << *str_ptr << std::endl;
+    std::cout << str_ref << std::endl;
+    return 0;
 }
