@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:46:40 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/09 18:03:31 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/10 14:40:24 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ZombieHorde::ZombieHorde(int n)
     int u;
 
     u = -1;
-    Zombie* tab_zombie = new Zombie[n];
+    this->tab_zombie = new Zombie[n];
     while (++u < n)
     {
         std::string tab_name [5] = {"Courgette", "Frederick", "Patate Girl", "Roberta", "Brutus"};

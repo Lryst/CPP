@@ -6,16 +6,15 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:39:20 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/09 18:04:27 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/10 14:40:27 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+//#include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
 int main()
 {
     ZombieHorde horde(4);
-    ~ZombieHorde();
     return (0);
 }
