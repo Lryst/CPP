@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 17:30:58 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/13 17:33:55 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/13 18:00:05 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanB
         ~HumanB();
         void    attack();
         std::string getName();
-        void    setWeapon(std::string weap);
+        void    setWeapon(Weapon &weap);
           
 };
 
