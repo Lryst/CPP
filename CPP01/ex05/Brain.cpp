@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 16:42:44 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/13 12:19:57 by lryst            ###   ########.fr       */
+/*   Created: 2021/04/13 14:40:49 by lryst             #+#    #+#             */
+/*   Updated: 2021/04/13 14:44:01 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-std::string identify()
+std::string Brain::identify() const
 {
-    std::stringstream tmp;
-    tmp << this->brain;
-    
-    
+	std::stringstream tmp;
+	tmp << this;
+	return (tmp.str());
 }
