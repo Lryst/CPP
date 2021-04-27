@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 18:07:55 by lryst             #+#    #+#              #
-#    Updated: 2021/04/13 18:08:13 by lryst            ###   ########.fr        #
+#    Updated: 2021/04/27 14:05:06 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,16 @@ all : $(NAME)
 
 $(NAME) : $(SRCS)
 		@ $(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
-		@echo "\033[032mPhoneBook : Object files Created\033[0m"
-		@echo "\033[032mPhoneBook : ./PhoneBook Created\033[0m"
+		@echo "\033[032mReplace : Object files Created\033[0m"
+		@echo "\033[032mReplace : ./Replace Created\033[0m"
 
 clean :
 	@rm -f $(OBJS)
-	@echo "\033[32mPhoneBook : Object files Removed\033[0m"
+	@echo "\033[32mReplace : Object files Removed\033[0m"
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo "\033[32mPhoneBook : ./PhoneBook Removed\033[0m"
+	@echo "\033[32mReplace : ./Replace Removed\033[0m"
 
 up : all clean
 
