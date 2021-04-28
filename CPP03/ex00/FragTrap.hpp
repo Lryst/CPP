@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:58:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 12:50:17 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/28 15:27:08 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@
 class FragTrap
 {
 	private :
-		int _hit;
-		int _max_hit;
-		int _nrj;
-		int _max_nrj;
-		int _lvl;
-		int	_melee_att;
-		int _ranged_att;
-		int	_armor_red;
+		unsigned int _hit;
+		unsigned int _max_hit;
+		unsigned int _nrj;
+		unsigned int _max_nrj;
+		unsigned int _lvl;
+		unsigned int	_melee_att;
+		unsigned int _ranged_att;
+		unsigned int	_armor_red;
 		std::string _name;
 	
 	public :
@@ -59,5 +59,7 @@ class FragTrap
 		void	cryoAttack(std::string const & target);
 		void	exploAttack(std::string const & target);
 		void	electricAttack(std::string const & target);
+		void	shotgunAttack(std::string const & target);
+		void	corosiveAttack(std::string const & target);
 };
 #endif
