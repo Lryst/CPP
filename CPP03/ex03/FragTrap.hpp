@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:58:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 16:39:14 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/28 17:50:12 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ class FragTrap
 		unsigned int _nrj;
 		unsigned int _max_nrj;
 		unsigned int _lvl;
-		unsigned int	_melee_att;
+		unsigned int _melee_att;
 		unsigned int _ranged_att;
-		unsigned int	_armor_red;
-		std::string _name;
+		unsigned int _armor_red;
+		std::string  _name;
 	
 	public :
 		FragTrap();
@@ -62,4 +62,5 @@ class FragTrap
 		void	shotgunAttack(std::string const & target);
 		void	corosiveAttack(std::string const & target);
 };
+
 #endif

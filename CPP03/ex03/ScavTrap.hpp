@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 15:58:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 16:39:14 by lryst            ###   ########.fr       */
+/*   Created: 2021/04/28 16:34:17 by lryst             #+#    #+#             */
+/*   Updated: 2021/04/28 17:50:23 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 # include <iostream>
 # include <string>
 # define RESET   "\033[0m"
@@ -32,7 +32,7 @@
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
-class FragTrap
+class ScavTrap
 {
 	private :
 		unsigned int _hit;
@@ -40,17 +40,17 @@ class FragTrap
 		unsigned int _nrj;
 		unsigned int _max_nrj;
 		unsigned int _lvl;
-		unsigned int	_melee_att;
+		unsigned int _melee_att;
 		unsigned int _ranged_att;
-		unsigned int	_armor_red;
-		std::string _name;
-	
-	public :
-		FragTrap();
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const & cpy);
-		~FragTrap();
+		unsigned int _armor_red;
+		std::string  _name;
 		
+	public :
+		ScavTrap();
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const & cpy);
+		~ScavTrap();
+
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
@@ -61,5 +61,7 @@ class FragTrap
 		void	electricAttack(std::string const & target);
 		void	shotgunAttack(std::string const & target);
 		void	corosiveAttack(std::string const & target);
+		void	challengeNewcomer(void);
 };
+
 #endif
