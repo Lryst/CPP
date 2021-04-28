@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 16:08:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 16:18:33 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/28 16:24:25 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ FragTrap::~FragTrap()
 
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "You don't see me, but I do... FR4G-TP " << this->_name << " attacks " << target << " at ranged, causing" << this->_ranged_att << "points of damage !" << std::endl;
+	std::cout << "You don't see me, but I do... FR4G-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at ranged, causing " << this->_ranged_att << " points of damage !" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "Ich, Ich free fight ! FR4G-TP " << this->_name << " attacks " << target << " at melee, causing " << this->_melee_att << " points of damage !" <<std::endl;
+	std::cout << "Ich, Ich free fight ! FR4G-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at melee, causing " << this->_melee_att << " points of damage !" <<std::endl;
 }
 
 void	FragTrap::takeDamage(unsigned int amount)

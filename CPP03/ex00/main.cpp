@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 12:02:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 15:42:51 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/28 16:25:02 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@ int main()
 	FragTrap abis;
 	FragTrap b("Truchmuch");
 	FragTrap bbis;
-	FragTrap c("Proutboy");
+	FragTrap c("HRP1");
 	FragTrap cbis;
 	std::cout << "------------------------------------------------------------------" <<std::endl;
 	std::string const tab_target [3] = {"moving target", "static target", "far target"};
 	
 	a.vaulthunter_dot_exe(tab_target[rand() % 3]);
 	std::cout << std::endl;
+	b.rangedAttack(tab_target[rand() % 3]);
+	b.rangedAttack(tab_target[rand() % 3]);
+	b.rangedAttack(tab_target[rand() % 3]);
+	b.rangedAttack(tab_target[rand() % 3]);
+	b.rangedAttack(tab_target[rand() % 3]);
 	b.rangedAttack(tab_target[rand() % 3]);
 	std::cout << std::endl;
 	b.vaulthunter_dot_exe(tab_target[rand() % 3]);
