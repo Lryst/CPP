@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 16:08:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 16:30:50 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/28 16:32:50 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	int i;
 
 	i = rand() % 5;
-	//std::cout << "i = " << i <<  " | _nrj = " << this->_nrj << " | _armor_red = " << this->_armor_red << std::endl;
 	if ((this->_nrj + this->_armor_red) > 25 && this->_nrj <= this->_max_nrj)
 	{
 		std::cout << BOLDWHITE << this->_name << RESET << " effect a semi-random attack on the " << target << " -> ";
