@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 16:39:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 18:03:39 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/29 14:36:07 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,31 +63,6 @@ void	ScavTrap::takeDamage(unsigned int amount)
 		std::cout << this->_name << "it is too weak to inflict damage" << std::endl;
 		return;
 	}
-}
-
-void	ScavTrap::cryoAttack(std::string const & target)
-{
-	std::cout << BLUE << "hugghh it is cold ! SC4V-TP " << BOLDBLUE << this->_name << BLUE << " attacks " << target << " at cryoattack, causing 15 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::exploAttack(std::string const & target)
-{
-	std::cout << RED << "Eeeeex-plosions ! SC4V-TP " << BOLDRED << this->_name << RED << " attacks " << target << " at explose attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::electricAttack(std::string const & target)
-{
-	std::cout << YELLOW << "My wheel makes static electricity ! SC4V-TP " << BOLDYELLOW << this->_name << YELLOW << " attacks " << target << " at electric attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::shotgunAttack(std::string const & target)
-{
-	std::cout << MAGENTA << "Tchit, boum ! SC4V-TP " << BOLDMAGENTA << this->_name << MAGENTA << " attacks " << target << " at shotgun attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::corosiveAttack(std::string const & target)
-{
-	std::cout << GREEN << "I am a deadly machine filled with acid ! SC4V-TP " << BOLDGREEN << this->_name << GREEN << " attacks " << target << " at corrosive attack, causing 25 points of damage !" << RESET << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
