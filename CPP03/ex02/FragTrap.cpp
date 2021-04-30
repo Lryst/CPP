@@ -6,28 +6,21 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 16:08:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 17:19:43 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/30 13:25:23 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : _hit(100), _max_hit(100), _nrj(100), _max_nrj(100), _lvl(1), _melee_att(30), _ranged_att(20), _armor_red(5)
+//"\"Hie ! I'm level " << this->_lvl << "\""
+FragTrap::FragTrap() : ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, "DefaultFragTrap")
 {
-	std::cout << "Default constructor is called. FragTrap, here we'r go : " << "\"Hie ! I'm level " << this->_lvl << "\"" << std::endl;
+	std::cout << GREEN << "Default constructor is called. FragTrap, here we'r go !" << RESET << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : _name(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
-	this->_hit = 100;
-	this->_max_hit = 100;
-	this->_nrj = 100;
-	this->_max_nrj = 100;
-	this->_lvl = 1;
-	this->_melee_att = 30;
-	this->_ranged_att = 20;
-	this->_armor_red = 5;
-	std::cout << "Constructor is called. " << BOLDWHITE << name  << RESET << " is going to smash everything !" << std::endl;
+	std::cout << GREEN << "Constructor is called. " << BOLDGREEN << name << RESET << GREEN << " is going to smash everything !" << RESET << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & cpy)
@@ -38,31 +31,23 @@ FragTrap::FragTrap(FragTrap const & cpy)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Deconstructor is called. Call me Titanos Terminatorus !" << std::endl;
+	std::cout << "Deconstructor is called. " << BOLDBLUE << this->_name << RESET << " FR4G-TP will come back soon..." << std::endl;
 }
 
-void	FragTrap::rangedAttack(std::string const & target)
+FragTrap & FragTrap::operator=(FragTrap const & src)
 {
-	std::cout << "You don't see me, but I do... FR4G-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at ranged, causing " << this->_ranged_att << " points of damage !" << std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "Ich, Ich free fight ! FR4G-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at melee, causing " << this->_melee_att << " points of damage !" <<std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hit >= amount)
-	{
-		this->_hit -= amount;
-		std::cout << "Oh no ! FR4G-TP " << this->_name << " takes " << amount << " points of damage ! Hold on !" << std::endl;
-	}
-	else
-	{
-		std::cout << this->_name << "it is too weak to inflict damage" << std::endl;
-		return;
-	}
+	std::cout << "Assignation operator called" << std::endl;
+	this->_hit = src._hit;
+    this->_hit = src._hit;
+	this->_max_hit = src._max_hit;
+	this->_nrj = src._nrj;
+	this->_max_nrj = src._max_nrj;
+	this->_lvl = src._lvl;
+	this->_melee_att = src._melee_att;
+	this->_ranged_att = src._ranged_att;
+	this->_armor_red = src._armor_red;
+	this->_name = src._name;
+	return *this;
 }
 
 void	FragTrap::cryoAttack(std::string const & target)
@@ -88,22 +73,6 @@ void	FragTrap::shotgunAttack(std::string const & target)
 void	FragTrap::corosiveAttack(std::string const & target)
 {
 	std::cout << GREEN << "What do you mean ? Isn't that vegetable juice ?! FR4G-TP " << BOLDGREEN << this->_name << GREEN << " attacks " << target << " at corrosive attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	if (this->_nrj < this->_max_nrj || this->_hit < this->_max_hit)
-	{
-		std::cout << CYAN << "Pfiouuff , FR4G-TP " << BOLDCYAN << this->_name << RESET << CYAN << " just take a little breath... " << amount << " extra points for Gryffindor ! You got the POWER !!" << RESET << std::endl;
-		this->_hit += amount;
-		if (this->_hit > this->_max_hit)
-			this->_hit = this->_max_hit;
-		this->_nrj += amount;
-		if (this->_nrj > this->_max_nrj)
-			this->_nrj = this->_max_nrj;
-	}
-	else
-		std::cout << "Oupsi, " << this->_name << " is actually in great shape ! Let's go !" << RESET << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)

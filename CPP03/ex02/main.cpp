@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 12:02:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 18:02:46 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/30 13:36:29 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int main()
 {
-	std::cout << "\n------------------------------------------------------------------" << std::endl;
+	std::string const tab_target [3] = {"moving target", "static target", "far target"};
+	
+	/* std::cout << "\n------------------------------------------------------------------" << std::endl;
 	std::cout << "                             FRAGTRAP                             " << std::endl;
 	std::cout << "------------------------------------------------------------------" << std::endl;
 	
@@ -26,8 +28,6 @@ int main()
 	FragTrap c("HRP1");
 	FragTrap cbis;
 	std::cout << "------------------------------------------------------------------" << std::endl;
-	
-	std::string const tab_target [3] = {"moving target", "static target", "far target"};
 	
 	a.vaulthunter_dot_exe(tab_target[rand() % 3]);
 	std::cout << std::endl;
@@ -125,5 +125,100 @@ int main()
 	f.beRepaired(100);
 	f.beRepaired(10);
 	f.takeDamage(20);
+	std::cout << std::endl;
+ */
+	std::cout << "\n\n------------------------------------------------------------------" << std::endl;
+	std::cout << "                             CLAPTRAP                             " << std::endl;
+	std::cout << "------------------------------------------------------------------\n" << std::endl;
+
+	ClapTrap g;
+	ClapTrap h;
+	ClapTrap i;
+	ClapTrap j;
+
+	FragTrap g2;
+	FragTrap h2("Morue");
+	ScavTrap i2;
+	ScavTrap j2("Atomisator");
+
+	g = g2;
+	h = h2;
+	i = i2;
+	j = i2;
+	
+	std::cout << std::endl;
+
+	j2.rangedAttack(tab_target[rand() % 3]);
+	j2.rangedAttack(tab_target[rand() % 3]);
+	j2.rangedAttack(tab_target[rand() % 3]);
+	j2.rangedAttack(tab_target[rand() % 3]);
+	j2.rangedAttack(tab_target[rand() % 3]);
+	j2.rangedAttack(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	j2.challengeNewcomer();
+	std::cout << std::endl;
+
+	i2.meleeAttack(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	j2.challengeNewcomer();
+	std::cout << std::endl;
+
+	i2.challengeNewcomer();
+	std::cout << std::endl;
+
+	j2.challengeNewcomer();
+	std::cout << std::endl;
+	
+	i2.challengeNewcomer();
+	std::cout << std::endl;
+	
+	i2.beRepaired(50);
+	std::cout << std::endl;
+	
+	i2.takeDamage(50);
+	i2.takeDamage(51);
+	i2.beRepaired(100);
+	i2.beRepaired(10);
+	i2.takeDamage(20);
+
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	h2.rangedAttack(tab_target[rand() % 3]);
+	h2.rangedAttack(tab_target[rand() % 3]);
+	h2.rangedAttack(tab_target[rand() % 3]);
+	h2.rangedAttack(tab_target[rand() % 3]);
+	h2.rangedAttack(tab_target[rand() % 3]);
+	h2.rangedAttack(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	h2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+
+	g2.beRepaired(50);
+	std::cout << std::endl;
+	
+	g2.vaulthunter_dot_exe(tab_target[rand() % 3]);
+	std::cout << std::endl;
+	
+	h2.takeDamage(50);
+	h2.takeDamage(51);
+	h2.beRepaired(100);
+	h2.beRepaired(10);
+	h2.takeDamage(20);
 	std::cout << std::endl;
 }
