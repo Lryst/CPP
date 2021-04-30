@@ -6,28 +6,20 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 16:39:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 18:03:39 by lryst            ###   ########.fr       */
+/*   Updated: 2021/04/30 13:30:42 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const name) : _name(name)
+ScavTrap::ScavTrap() : ClapTrap(100, 100, 50, 50, 1, 20, 15, 3, "DefaultScavTrap")
 {
-	this->_hit = 100;
-	this->_max_hit = 100;
-	this->_nrj = 50;
-	this->_max_hit = 50;
-	this->_lvl = 1;
-	this->_melee_att = 20;
-	this->_ranged_att = 15;
-	this->_armor_red = 3;
-	std::cout << "Constructor is called. A new ScavTrap is born, his name ? " << BOLDWHITE << this->_name << RESET << std::endl;
+	std::cout << YELLOW << "Default constructor is called. ScavTrap, here we'r go !" << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap() : _hit(100), _max_hit(100), _nrj(50), _max_nrj(50), _lvl(1), _melee_att(20), _ranged_att(15), _armor_red(3)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
-	std::cout << "Default constructor is called. ScavTrap, let's go : " << "\"Hie ! I'm level " << this->_lvl << "\"" << std::endl;
+	std::cout << YELLOW << "Constructor is called. A new ScavTrap is born, his name ? " << BOLDYELLOW << this->_name << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & cpy)
@@ -36,74 +28,25 @@ ScavTrap::ScavTrap(ScavTrap const & cpy)
 	*this = cpy;
 }
 
+ScavTrap & ScavTrap::operator=(ScavTrap const & src)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->_hit = src._hit;
+    this->_hit = src._hit;
+	this->_max_hit = src._max_hit;
+	this->_nrj = src._nrj;
+	this->_max_nrj = src._max_nrj;
+	this->_lvl = src._lvl;
+	this->_melee_att = src._melee_att;
+	this->_ranged_att = src._ranged_att;
+	this->_armor_red = src._armor_red;
+	this->_name = src._name;
+	return *this;
+}
+
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Deconstructor is called. Bye bye ScavTrap !" << std::endl;
-}
-
-void	ScavTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "You don't see me, but I do... SC4V-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at ranged, causing " << this->_ranged_att << " points of damage !" << std::endl;
-}
-
-void	ScavTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "Ich, Ich free fight ! SC4V-TP " << BOLDWHITE << this->_name << RESET << " attacks " << target << " at melee, causing " << this->_melee_att << " points of damage !" <<std::endl;
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hit >= amount)
-	{
-		this->_hit -= amount;
-		std::cout << "Oh no ! SC4V-TP " << this->_name << " takes " << amount << " points of damage ! Hold on !" << std::endl;
-	}
-	else
-	{
-		std::cout << this->_name << "it is too weak to inflict damage" << std::endl;
-		return;
-	}
-}
-
-void	ScavTrap::cryoAttack(std::string const & target)
-{
-	std::cout << BLUE << "hugghh it is cold ! SC4V-TP " << BOLDBLUE << this->_name << BLUE << " attacks " << target << " at cryoattack, causing 15 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::exploAttack(std::string const & target)
-{
-	std::cout << RED << "Eeeeex-plosions ! SC4V-TP " << BOLDRED << this->_name << RED << " attacks " << target << " at explose attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::electricAttack(std::string const & target)
-{
-	std::cout << YELLOW << "My wheel makes static electricity ! SC4V-TP " << BOLDYELLOW << this->_name << YELLOW << " attacks " << target << " at electric attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::shotgunAttack(std::string const & target)
-{
-	std::cout << MAGENTA << "Tchit, boum ! SC4V-TP " << BOLDMAGENTA << this->_name << MAGENTA << " attacks " << target << " at shotgun attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::corosiveAttack(std::string const & target)
-{
-	std::cout << GREEN << "I am a deadly machine filled with acid ! SC4V-TP " << BOLDGREEN << this->_name << GREEN << " attacks " << target << " at corrosive attack, causing 25 points of damage !" << RESET << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_nrj < this->_max_nrj || this->_hit < this->_max_hit)
-	{
-		std::cout << CYAN << "Arff , SC4V-TP " << BOLDCYAN << this->_name << RESET << CYAN << " I take a little pick-me-up... " << amount << " ,I am a rising star!!" << RESET << std::endl;
-		this->_hit += amount;
-		if (this->_hit > this->_max_hit)
-			this->_hit = this->_max_hit;
-		this->_nrj += amount;
-		if (this->_nrj > this->_max_nrj)
-			this->_nrj = this->_max_nrj;
-	}
-	else
-		std::cout << "Youhouhou, " << this->_name << " is at the max ! Let's go !" << RESET << std::endl;
+	std::cout << "Deconstructor is called. Bye bye " << BOLDGREEN << this->_name << RESET << " SC4V-TP !" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(void)
