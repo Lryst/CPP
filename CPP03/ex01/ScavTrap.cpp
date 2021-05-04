@@ -6,11 +6,16 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 16:39:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 18:03:39 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/03 11:15:49 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : _hit(100), _max_hit(100), _nrj(50), _max_nrj(50), _lvl(1), _melee_att(20), _ranged_att(15), _armor_red(3)
+{
+	std::cout << "Default constructor is called. ScavTrap, let's go : " << "\"Hie ! I'm level " << this->_lvl << "\"" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string const name) : _name(name)
 {
@@ -25,15 +30,26 @@ ScavTrap::ScavTrap(std::string const name) : _name(name)
 	std::cout << "Constructor is called. A new ScavTrap is born, his name ? " << BOLDWHITE << this->_name << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap() : _hit(100), _max_hit(100), _nrj(50), _max_nrj(50), _lvl(1), _melee_att(20), _ranged_att(15), _armor_red(3)
-{
-	std::cout << "Default constructor is called. ScavTrap, let's go : " << "\"Hie ! I'm level " << this->_lvl << "\"" << std::endl;
-}
-
 ScavTrap::ScavTrap(ScavTrap const & cpy)
 {
 	std::cout << "Copy constructor is called. Hi I'm a copy ScavTrap, I am not unique... I can not believe it..." << std::endl;
 	*this = cpy;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const & src)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->_hit = src._hit;
+    this->_hit = src._hit;
+	this->_max_hit = src._max_hit;
+	this->_nrj = src._nrj;
+	this->_max_nrj = src._max_nrj;
+	this->_lvl = src._lvl;
+	this->_melee_att = src._melee_att;
+	this->_ranged_att = src._ranged_att;
+	this->_armor_red = src._armor_red;
+	this->_name = src._name;
+	return *this;
 }
 
 ScavTrap::~ScavTrap()

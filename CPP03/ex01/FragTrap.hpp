@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:58:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 17:50:12 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/03 11:15:14 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class FragTrap
 		FragTrap();
 		FragTrap(std::string const name);
 		FragTrap(FragTrap const & cpy);
+		FragTrap & operator=(FragTrap const & src);
 		~FragTrap();
 		
 		void	rangedAttack(std::string const & target);

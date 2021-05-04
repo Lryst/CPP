@@ -6,13 +6,12 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 16:08:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/30 13:25:23 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/03 11:18:04 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-//"\"Hie ! I'm level " << this->_lvl << "\""
 FragTrap::FragTrap() : ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, "DefaultFragTrap")
 {
 	std::cout << GREEN << "Default constructor is called. FragTrap, here we'r go !" << RESET << std::endl;

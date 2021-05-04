@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 18:06:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/03 11:18:56 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/03 11:26:24 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap(ClapTrap const & cpy)
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & src)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "ClapTrap Assignation operator called" << std::endl;
 	this->_hit = src._hit;
     this->_hit = src._hit;
 	this->_max_hit = src._max_hit;

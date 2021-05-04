@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 16:34:17 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 17:50:23 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/03 11:16:07 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class ScavTrap
 		ScavTrap();
 		ScavTrap(std::string const name);
 		ScavTrap(ScavTrap const & cpy);
+		ScavTrap & operator=(ScavTrap const & src);
 		~ScavTrap();
 
 		void	rangedAttack(std::string const & target);
