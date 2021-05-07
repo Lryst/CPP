@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:28:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/06 17:32:57 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/07 10:26:57 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int Enemy::getHP() const
 void	Enemy::takeDamage(int hurt)
 {
 	if ((this->getHP() - hurt) < 0)
-		this->_hp = hurt;
+		this->_hp = 0;
 	else
 	{
 		this->_hp -= hurt;

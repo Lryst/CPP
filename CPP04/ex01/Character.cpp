@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:01:53 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/06 17:59:18 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/07 10:49:41 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Character & Character::operator=(Character const & src)
 
 Character::~Character()
 {
-	
 }
 
 void	Character::recoverAP()
@@ -55,7 +54,7 @@ void	Character::equip(AWeapon * arm)
 
 void	Character::attack(Enemy * bad)
 {
-	if (this->_arm && this->_ap > this->_arm->getAPCost())
+	if (bad && this->_arm && this->_ap > this->_arm->getAPCost())
 	{
 		std::cout << this->getName() <<  " attacks " << bad->getType() << " with a " << this->_arm->getName() << std::endl;
 		this->_arm->attack();

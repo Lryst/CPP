@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/05 16:03:10 by lryst             #+#    #+#              #
-#    Updated: 2021/05/06 17:40:58 by lryst            ###   ########.fr        #
+#    Updated: 2021/05/07 10:36:40 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ INCLUDES = -I
 2SRCS =	my_main.cpp \
 		AWeapon.cpp \
 		Character.cpp \
+		Enemy.cpp \
 		PlasmaRifle.cpp \
 		PowerFist.cpp \
 		RadScorpion.cpp \
