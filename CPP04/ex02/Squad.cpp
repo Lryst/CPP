@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/18 14:33:49 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/19 15:50:39 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,15 @@ Squad   & Squad::operator=(Squad const & src)
 
 Squad::~Squad()
 {
-    
+    int i;
+
+    i = 0;
+    while (i < this->_count)
+    {
+        delete this->_unity[i];
+        i++;
+    }
+    delete this;
 }
 
 void    Squad::set_count(int nbr)

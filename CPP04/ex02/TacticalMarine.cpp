@@ -6,28 +6,33 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:14:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/17 13:49:52 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/19 15:56:03 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Squad.hpp"
+#include "TacticalMarine.hpp"
 
-Squad::Squad()
+TacticalMarine::TacticalMarine()
 {
     
 }
 
-Squad::Squad(Squad const & cpy)
+TacticalMarine::TacticalMarine(TacticalMarine const & cpy)
 {
     
 }
 
-Squad   & Squad::operator=(Squad const & src)
+TacticalMarine   & TacticalMarine::operator=(TacticalMarine const & src)
 {
     
 }
 
-Squad::~Squad()
+TacticalMarine::~TacticalMarine()
 {
     
+}
+
+ISpaceMarine* TacticalMarine::clone() const
+{
+    ISpaceMarine *nv = new ISpaceMarine();
 }
