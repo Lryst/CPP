@@ -6,14 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:14:26 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/19 15:53:33 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/24 13:53:49 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TACTICALMARINE_H
 # define TACTICALMARINE_H
 # include "ISpaceMarine.hpp"
-# include "TacticalMarine.hpp"
 
 class TacticalMarine : public ISpaceMarine
 {
@@ -31,4 +30,4 @@ class TacticalMarine : public ISpaceMarine
 		virtual void meleeAttack() const;
 };
 
-#endif 
+#endif

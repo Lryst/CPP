@@ -6,15 +6,15 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:48:31 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/17 13:49:33 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/24 14:07:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_H
-# define TACTICALMARINE_H
-# include "AssaultTerminator.hpp"
+#ifndef ASSAULTERMINATOR_H
+# define ASSAULTERMINATOR_H
+# include "ISpaceMarine.hpp"
 
-class AssaultTerminator :
+class AssaultTerminator : public ISpaceMarine
 {
 	private :
 	
@@ -23,6 +23,11 @@ class AssaultTerminator :
 		AssaultTerminator(AssaultTerminator const & cpy);
 		AssaultTerminator & operator=(AssaultTerminator const & src);
 		~AssaultTerminator();
+
+		virtual ISpaceMarine* clone() const;
+		virtual void battleCry() const;
+		virtual void rangedAttack() const;
+		virtual void meleeAttack() const;
 };
 
 #endif 
