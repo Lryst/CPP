@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 11:00:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/25 10:34:52 by lryst            ###   ########.fr       */
+/*   Created: 2021/05/25 14:21:32 by lryst             #+#    #+#             */
+/*   Updated: 2021/05/25 16:19:42 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERTRAP_H
-# define SUPERTRAP_H
-# include "FragTrap.hpp"
-# include "NinjaTrap.hpp"
+#ifndef ICHARACTER_H
+# define ICHARACTER_H
+# include <iostream>
 
-class	SuperTrap : public NinjaTrap public FragTrap
+class ICharacter
 {
-	public :
-		SuperTrap();
-		SuperTrap(std::string name);
-		SuperTrap(SuperTrap const & cpy);
-		SuperTrap & operator=(SuperTrap const & src);
-		~SuperTrap();
-
-		using	FragTrap::rangedAttack;
-		using	NinjaTrap::meleeAttack;
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif
