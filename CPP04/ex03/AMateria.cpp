@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:04:29 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/25 16:58:37 by lryst            ###   ########.fr       */
+/*   Updated: 2021/05/31 12:08:42 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,8 @@ unsigned int AMateria::getXP const
 	return (this->_xp);
 }
 
-AMateria *	AMateria::clone()
-{
-
-}
-
 void	AMateria::use(ICharacter& target)
 {
 	this->_xp += 10;
-	std::cout << "* shoots an ice bolt at NOM *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target::getName() << " *" << std::endl;
 }
