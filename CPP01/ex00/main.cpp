@@ -6,19 +6,19 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:38:03 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/05 16:24:26 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/09 18:42:12 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-int main()
+void    ponyOnTheStack()
 {
 	std::string tmp;
 	
 	Pony	pony1 = Pony("Little Pony");
-	Pony*	pony2 = new Pony("Big Pony");
-
+	std::cout << "Creation of " << pony1.get_name() << " on the stack !" << std::endl;
+	
 	std::cout << "Choose a color for Little Pony :" << std::endl;
 	std::cin >> tmp;
 	pony1.set_color(tmp);
@@ -26,7 +26,16 @@ int main()
 	std::cout << "How old is Little Pony ?" << std::endl;
 	std::cin >> tmp;
 	pony1.set_age(tmp);
-	std::cout << "Now Little Pony has " << pony2->get_age() << " years old" << std::endl;
+	std::cout << "Now Little Pony has " << pony1.get_age() << " years old" << std::endl;
+	
+}
+
+void    ponyOnTheHeap()
+{
+	std::string tmp;
+	
+    Pony*	pony2 = new Pony("Big Pony");
+	std::cout << "\nCreation of " << pony2->get_name() << " on the heap !" << std::endl;
 	std::cout << "Choose a color for Big Pony :" << std::endl;
 	std::cin >> tmp;
 	pony2->set_color(tmp);
@@ -37,5 +46,11 @@ int main()
 	std::cout << "Now Big Pony has " << pony2->get_age() << " years old" << std::endl;
 
 	delete pony2;
+}
+
+int main()
+{
+	ponyOnTheStack();
+	ponyOnTheHeap();
 	return (0);	
 }

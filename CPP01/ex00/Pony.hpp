@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:38:25 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/16 11:11:16 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/09 18:39:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,9 @@ class	Pony
 		std::string _color;
 		std::string	_age;
 	public :
-		Pony(std::string name) : _name(name)
-		{
-			std::cout << "Pony " << this->_name << "is created" << std:: endl;
-		}
-		~Pony()
-		{
-			std::cout << "Pony " << this->_name << " is delete" << std::endl;
-		}
+		Pony(std::string name) : _name(name) {}
+		~Pony(){}
+		std::string get_name();
 		std::string	get_color();
 		std::string get_age();
 		void set_color(std::string color);

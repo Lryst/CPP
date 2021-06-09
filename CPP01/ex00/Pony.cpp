@@ -6,11 +6,16 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:46:51 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/05 16:23:03 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/09 18:32:55 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
+
+std::string Pony::get_name()
+{
+    return this->_name;
+}
 
 std::string Pony::get_color()
 {
