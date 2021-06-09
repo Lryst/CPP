@@ -6,13 +6,16 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:21:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/25 16:19:42 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/09 17:20:53 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
+# include "AMateria.hpp"
 # include <iostream>
+
+class AMateria;
 
 class ICharacter
 {

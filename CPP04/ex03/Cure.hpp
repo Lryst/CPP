@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:21:47 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/31 12:01:06 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/09 14:34:13 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Cure : public AMateria
 {
     private :
+        std::string _type;
 
     public :
         Cure();
