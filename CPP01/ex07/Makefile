@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
+#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 18:07:55 by lryst             #+#    #+#              #
-#    Updated: 2021/04/27 14:05:06 by lryst            ###   ########.fr        #
+#    Updated: 2021/06/10 13:30:01 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = Replace
 
-SRCS =	main.cpp \
+SRCS = replace.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
