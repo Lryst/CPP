@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 18:03:09 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/27 15:31:31 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/10 10:56:07 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,17 @@ int main(int ac, char **av)
         std::string s1;
         std::string s2;
         std::string buff;
+        std::string filename;
         
         s1 = av[2];
         s2 = av[3];
+        filename = av[1];
+        filename += ".replace";
         if (s1 != "\0" && s2 != "\0")
         {
             if (ifs.good())
             {
-                std::ofstream ofs("FILENAME.replace");
+                std::ofstream ofs(filename);
                 while (getline(ifs,buff))
                 {
                     std::size_t pos = buff.find(s1);
