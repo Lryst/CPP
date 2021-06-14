@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 12:02:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/28 17:57:29 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/14 12:09:33 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main()
 {
+	srand (time(NULL));
+	
 	FragTrap a("R2D2");
 	FragTrap abis;
 	FragTrap b("Truchmuch");

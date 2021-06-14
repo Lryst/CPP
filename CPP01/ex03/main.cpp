@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:39:20 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/10 15:04:14 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/14 12:11:07 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int main()
 {
+    srand (time(NULL));
+    
     ZombieHorde horde(4);
-    system ("leaks a.out");
     return (0);
 }

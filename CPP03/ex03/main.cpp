@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 12:02:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/30 14:35:28 by lryst            ###   ########.fr       */
+/*   Updated: 2021/06/14 12:10:15 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 int main()
 {
+	srand (time(NULL));
+	
 	std::string const tab_target [3] = {"moving target", "static target", "far target"};
 	
 	/* std::cout << "\n------------------------------------------------------------------" << std::endl;
