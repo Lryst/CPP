@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 11:00:14 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/01 11:23:49 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/02 12:01:29 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	FragTrap::highFivesGuys(void)
 {
 	std::string tmp;
 
-	std::cout << "Hi ! I'm " << this->_name << ", do you want to make a high fives with me ? Pleeeeaaase ?" << std::endl;
+	std::cout << "Hi ! I'm " << this->_name << ", do you want to make a high fives with me ? Pleeeeaaase ? yes/no" << std::endl;
 	std::cin >> tmp;
 	if (tmp == "yes")
 		std::cout << "Youhou ! Here we go ! And ... HIGH FIVES !" << std::endl;
