@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 10:48:34 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/01 12:04:48 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/02 11:58:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 DiamondTrap::DiamondTrap()
 {
-	this->_hit = FragTrap::_hit;
-	this->_nrj = ScavTrap::_nrj;
-	this->_dam = FragTrap::_dam;
+	this->_hit = 100;
+	this->_nrj = 50;
+	this->_dam = 30;
     this->_name = ClapTrap::_name;
 	std::cout << GREEN << "Default constructor is called. Here we'r go" << RESET << std::endl;
     this->print_values();
@@ -24,9 +24,9 @@ DiamondTrap::DiamondTrap()
 
 DiamondTrap::DiamondTrap(std::string name)
 {
-	this->_hit = FragTrap::_hit;
-	this->_nrj = ScavTrap::_nrj;
-	this->_dam = FragTrap::_dam;
+	this->_hit = 100;
+	this->_nrj = 50;
+	this->_dam = 30;
     this->_name = ClapTrap::_name + "_clap_name";
 	std::cout << GREEN << "Constructor is called. " << name << " is going to smash everything !" << RESET << std::endl;
     this->print_values();
