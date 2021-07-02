@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 15:58:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/03 11:15:14 by lryst            ###   ########.fr       */
+/*   Created: 2021/06/28 22:37:15 by lryst             #+#    #+#             */
+/*   Updated: 2021/06/29 10:14:45 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 # include <iostream>
 # include <string>
 # define RESET   "\033[0m"
@@ -32,36 +32,24 @@
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
-class FragTrap
+class ClapTrap
 {
 	private :
 		unsigned int _hit;
-		unsigned int _max_hit;
 		unsigned int _nrj;
-		unsigned int _max_nrj;
-		unsigned int _lvl;
-		unsigned int _melee_att;
-		unsigned int _ranged_att;
-		unsigned int _armor_red;
+		unsigned int _dam;
 		std::string  _name;
-	
-	public :
-		FragTrap();
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const & cpy);
-		FragTrap & operator=(FragTrap const & src);
-		~FragTrap();
-		
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
+
+    public :
+        ClapTrap();
+		ClapTrap(std::string name);
+        ClapTrap(ClapTrap const & cpy);
+        virtual ~ClapTrap();
+        ClapTrap & operator=(ClapTrap const & src);
+        
+        void	attack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
-		void	cryoAttack(std::string const & target);
-		void	exploAttack(std::string const & target);
-		void	electricAttack(std::string const & target);
-		void	shotgunAttack(std::string const & target);
-		void	corosiveAttack(std::string const & target);
 };
 
 #endif

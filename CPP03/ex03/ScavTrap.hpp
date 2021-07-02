@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 16:34:17 by lryst             #+#    #+#             */
-/*   Updated: 2021/04/30 13:28:29 by lryst            ###   ########.fr       */
+/*   Created: 2021/06/29 10:32:57 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/01 12:07:08 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 # define SCAVTRAP_H
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+
+class ScavTrap : public virtual ClapTrap
 {
 	public :
 		ScavTrap();
-		ScavTrap(std::string const name);
+		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const & cpy);
+		~ScavTrap();
 		ScavTrap & operator=(ScavTrap const & src);
-		virtual ~ScavTrap();
 
-		void	challengeNewcomer(void);
+		void	guardGate();
 };
 
 #endif
