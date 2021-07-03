@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 10:20:44 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 11:51:17 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ Squad   & Squad::operator=(Squad const & src)
 	int i;
 
 	i = 0;
-	this->_count = src._count;
 	if (this->_unity)
 	{
 		while (i++ < this->_count)
-			delete this->_unity;
+			delete this->_unity[i];
+		delete [] this->_unity;
 	}
 	i = 0;
+	this->_count = src._count;
+	this->_unity = new ISpaceMarine*[this->_count];
 	while (i < this->_count)
 	{
 		this->_unity[i] = src._unity[i];
