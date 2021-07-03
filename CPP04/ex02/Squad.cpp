@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/24 16:58:59 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 10:04:30 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,35 @@ Squad::Squad()
 
 Squad::Squad(Squad const & cpy)
 {
-	*this = cpy;
+	int i;
+
+	i = 0;
+	this->_count = cpy._count;
+	this->_unity = new ISpaceMarine*[this->_count];
+	while (i < this->_count)
+	{
+		this->_unity[i] = cpy._unity[i];
+		i++;
+	}
 }
 
 Squad   & Squad::operator=(Squad const & src)
 {
+	int i;
+
+	i = 0;
 	this->_count = src._count;
-	this->_unity = src._unity;
+	if (src._count != 0)
+	{
+		while (i++ < src._count)
+			delete this->_unity;
+	}
+	i = 0;
+	while (i < this->_count)
+	{
+		this->_unity = src._unity;
+		i++;
+	}
 	return *this;
 }
 
