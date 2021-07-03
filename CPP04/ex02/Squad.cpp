@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 17:55:35 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:13:52 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,12 +125,8 @@ int     Squad::push(ISpaceMarine *src)
 		i++;
 	}
 	new_squad[i] = src;
-/* 	while (i++ < this->_count)
-			delete this->_unity[i]; */
 	delete [] this->_unity;
-	//this->setUnity(new_squad);
 	this->_unity = new_squad;
-	//delete [] new_squad;
 	++this->_count;
 	return (this->_count);
 }

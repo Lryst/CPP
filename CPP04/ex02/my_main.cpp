@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 12:13:56 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 18:04:16 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:13:27 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,15 @@ int main()
 	ISpaceMarine* mbappe = new TacticalMarine;
 	ISpaceMarine* incognito = new AssaultTerminator;
 	
-	ISquad* vlc = new Squad;
+	Squad* vlc = new Squad;
 
-	ISquad* team = new Squad;
+	Squad* team = new Squad;
 
 	vlc->push(bob);
 	vlc->push(jim);
 	
-	team = vlc;
-	
-	
-	delete vlc;
-	
+	*team = *vlc;
+		
 	team->push(kevin);
 	team->push(mbappe);
 	team->push(incognito);
@@ -48,6 +45,6 @@ int main()
 	}
 	
 	delete team;
-	
+	delete vlc;
 	return 0;
 }
