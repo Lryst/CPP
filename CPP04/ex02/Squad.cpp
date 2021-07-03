@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 10:19:00 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 10:20:44 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Squad   & Squad::operator=(Squad const & src)
 	i = 0;
 	while (i < this->_count)
 	{
-		this->_unity = src._unity;
+		this->_unity[i] = src._unity[i];
 		i++;
 	}
 	return *this;
