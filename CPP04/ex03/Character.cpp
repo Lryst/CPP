@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:21:35 by lryst             #+#    #+#             */
-/*   Updated: 2021/06/09 17:09:34 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 12:50:39 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ Character::Character(Character const & cpy)
 {
 	int i;
 
+	i = 0;
+	while(i < 4)
+	{
+		if (this->_materia[i] != NULL)
+			delete this->_materia[i];
+		i++;
+	}
 	i = 0;
 	this->_name = cpy._name;
 	while (i < 4)
