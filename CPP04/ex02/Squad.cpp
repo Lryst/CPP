@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 11:51:17 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 15:42:20 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,18 @@ Squad::Squad(Squad const & cpy)
 	int i;
 
 	i = 0;
+	if (this->_unity)
+	{
+		while (i++ < this->_count)
+			delete this->_unity[i];
+		delete [] this->_unity;
+	}
+	i = 0;
 	this->_count = cpy._count;
 	this->_unity = new ISpaceMarine*[this->_count];
 	while (i < this->_count)
 	{
-		this->_unity[i] = cpy._unity[i];
+		this->_unity[i] = cpy._unity[i]->clone();
 		i++;
 	}
 }
@@ -40,8 +47,8 @@ Squad   & Squad::operator=(Squad const & src)
 	i = 0;
 	if (this->_unity)
 	{
-		while (i++ < this->_count)
-			delete this->_unity[i];
+		while (i < this->_count)
+			delete this->_unity[i++];
 		delete [] this->_unity;
 	}
 	i = 0;
@@ -49,7 +56,7 @@ Squad   & Squad::operator=(Squad const & src)
 	this->_unity = new ISpaceMarine*[this->_count];
 	while (i < this->_count)
 	{
-		this->_unity[i] = src._unity[i];
+		this->_unity[i] = src._unity[i]->clone();
 		i++;
 	}
 	return *this;
@@ -62,9 +69,10 @@ Squad::~Squad()
 	i = 0;
 	while (i < this->_count)
 	{
-		delete this->_unity[i];
-		i++;
+		delete this->_unity[i++];
+		//i++;
 	}
+	delete [] this->_unity;
 }
 
 void    Squad::setCount(int nbr)
@@ -111,12 +119,12 @@ int     Squad::push(ISpaceMarine *src)
 	i = 0;
 	while (i < this->_count)
 	{
-		new_squad[i] = this->getUnit(i);
+		new_squad[i] = this->_unity[i];
 		i++;
 	}
 	new_squad[i] = src;
 	delete[] this->_unity;
 	this->setCount(this->getCount() + 1);
-	this->setUnity(new_squad);
+	//this->setUnity(new_squad);
 	return (this->_count);
 }
