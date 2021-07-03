@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:22:14 by lryst             #+#    #+#             */
-/*   Updated: 2021/06/09 18:04:08 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:30:43 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ int main()
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     
-    ICharacter* moi = new Character("moi");
+    ICharacter* me = new Character("me");
     
     AMateria* tmp;
     tmp = src->createMateria("ice");
-    moi->equip(tmp);
+    me->equip(tmp);
     tmp = src->createMateria("cure");
-    moi->equip(tmp);
+    me->equip(tmp);
     
     ICharacter* bob = new Character("bob");
     
-    moi->use(0, *bob);
-    moi->use(1, *bob);
+    me->use(0, *bob);
+    me->use(1, *bob);
     
     delete bob;
-    delete moi;
+    delete me;
     delete src;
 
     return 0;

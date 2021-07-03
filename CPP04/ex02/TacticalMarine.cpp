@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:14:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/24 16:56:35 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:47:47 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 TacticalMarine::TacticalMarine()
 {
-	std::cout << "Tactical Marine ready for action !" << std::endl;
+	std::cout << "Tactical Marine ready for battle!" << std::endl;
 	return ;
 }
 
@@ -31,7 +31,7 @@ TacticalMarine   & TacticalMarine::operator=(TacticalMarine const & src)
 
 TacticalMarine::~TacticalMarine()
 {
-	std::cout << "Aaargh ..." << std::endl;
+	std::cout << "Aaargh..." << std::endl;
 }
 
 ISpaceMarine* TacticalMarine::clone() const
@@ -42,13 +42,13 @@ ISpaceMarine* TacticalMarine::clone() const
 
 void	TacticalMarine::battleCry() const
 {
-	std::cout << "For the Holy PLOT !" << std::endl;
+	std::cout << "For the holy PLOT!" << std::endl;
 	return ;
 }
 
 void	TacticalMarine::rangedAttack() const
 {
-	std::cout << "* attacks with a bolter " << std::endl;
+	std::cout << "* attacks with a bolter *" << std::endl;
 	return ;
 }
 

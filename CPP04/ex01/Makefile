@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/05 16:03:10 by lryst             #+#    #+#              #
-#    Updated: 2021/05/07 10:36:40 by lryst            ###   ########.fr        #
+#    Updated: 2021/07/03 18:52:15 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@rm -f $(2NAME)
+	@rm -rf mine.txt
 	@echo "\033[32mex01/1ex01 : ./ex01 Removed\033[0m"
 
 up : all clean

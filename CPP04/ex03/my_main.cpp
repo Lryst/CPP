@@ -3,40 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   my_main.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 18:24:01 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 18:24:31 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 19:19:37 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
 #include "Ice.hpp"
-#include "MateriaSource.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "Cure.hpp"
 
-int main()
+int	main()
 {
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
-    
-    ICharacter* moi = new Character("moi");
-    
+	IMateriaSource* src = new MateriaSource();
+    Character *you = new Character("you");
+    ICharacter* me = new Character("me");
     AMateria* tmp;
-    tmp = src->createMateria("ice");
-    moi->equip(tmp);
-    tmp = src->createMateria("cure");
-    moi->equip(tmp);
-    
     ICharacter* bob = new Character("bob");
+    Character *she = new Character("she");
     
-    moi->use(0, *bob);
-    moi->use(1, *bob);
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
     
-    delete bob;
-    delete moi;
-    delete src;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+    
+	me->use(0, *bob);
+	me->use(1, *bob);
 
-    return 0;
+	tmp->use(*bob);
+    
+    AMateria* tmpCopy(tmp);
+	tmpCopy->use(*bob);
+
+	you->equip(src->createMateria("ice"));
+	you->use(0, *me);
+
+	*she = *you;
+
+    tmp = src->createMateria("cure");
+	she->equip(tmp);
+    tmp = src->createMateria("ice");
+	she->equip(tmp);
+    she->use(2, *you);
+        
+	delete bob;
+	delete me;
+	delete src;
+	delete she;
+	delete you;
+
+	return 0;
 }

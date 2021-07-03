@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:21:35 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 12:50:39 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 19:14:19 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 4 && idx > -1)
+	if (idx < 4 && idx > -1 && this->_materia[idx])
 		this->_materia[idx]->use(target);
 }

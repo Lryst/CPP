@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 18:13:52 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:42:00 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ Squad::~Squad()
 	int i;
 
 	i = 0;
-	std::cout << "nbr = " << this->_count << std::endl;
 	while (i < this->_count)
 	{
 		delete this->_unity[i];

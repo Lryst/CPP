@@ -6,11 +6,9 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/05 11:31:26 by lryst             #+#    #+#              #
-#    Updated: 2021/05/05 15:11:10 by lryst            ###   ########.fr        #
+#    Updated: 2021/07/03 18:52:38 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-#clang++ -Wall -Wextra -Werror -std=c++98 *.cpp ; ./a.out | cat > mine.txt; diff expected.txt mine.txt
 
 CPP = clang++
 
@@ -62,6 +60,7 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@rm -f $(2NAME)
+	@rm -rf mine.txt
 	@echo "\033[32mex00 : ./ex00 Removed\033[0m"
 
 up : all clean

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:48:01 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/24 13:51:52 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 18:50:52 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ AssaultTerminator   & AssaultTerminator::operator=(AssaultTerminator const & src
 
 AssaultTerminator::~AssaultTerminator()
 {
-	std::cout << "I’ll be back ..." << std::endl;
+	std::cout << "I'll be back..." << std::endl;
 }
 
 ISpaceMarine* AssaultTerminator::clone() const
@@ -42,7 +42,7 @@ ISpaceMarine* AssaultTerminator::clone() const
 
 void	AssaultTerminator::battleCry() const
 {
-	std::cout << "This code is unclean. Purify it !" << std::endl;
+	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 	return ;
 }
 
@@ -54,6 +54,6 @@ void	AssaultTerminator::rangedAttack() const
 
 void 	AssaultTerminator::meleeAttack() const
 {
-	std::cout << "* attaque with chainfists *" << std::endl;
+	std::cout << "* attacks with chainfists *" << std::endl;
 	return ;
 }

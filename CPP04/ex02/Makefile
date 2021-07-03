@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lryst <lryst@student.42f.r>                +#+  +:+       +#+         #
+#    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/03 12:09:41 by lryst             #+#    #+#              #
-#    Updated: 2021/07/03 12:10:55 by lryst            ###   ########.fr        #
+#    Updated: 2021/07/03 18:51:47 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@rm -f $(2NAME)
+	@rm -rf mine.txt
 	@echo "\033[32mex02/1ex02 : ./ex02 Removed\033[0m"
 
 up : all clean
