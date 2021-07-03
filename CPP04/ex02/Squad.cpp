@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 16:57:03 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 17:55:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,12 @@ Squad   & Squad::operator=(Squad const & src)
 	if (this->_unity)
 	{
 		while (i < this->_count)
-			delete this->_unity[i++];
-		delete [] this->_unity;
+		{
+			delete this->_unity[i];
+			i++;
+		}
 	}
+	delete [] this->_unity;
 	i = 0;
 	this->_count = src._count;
 	this->_unity = new ISpaceMarine*[this->_count];
@@ -67,10 +70,11 @@ Squad::~Squad()
 	int i;
 
 	i = 0;
+	std::cout << "nbr = " << this->_count << std::endl;
 	while (i < this->_count)
 	{
-		delete this->_unity[i++];
-		//i++;
+		delete this->_unity[i];
+		i++;
 	}
 	delete [] this->_unity;
 }
@@ -110,27 +114,23 @@ int     Squad::push(ISpaceMarine *src)
 	i = 0;
 	if (src == NULL)
 		return (this->_count);
-	while (i < this->_count)
-		i++;
-	if (this->getUnit(i) == src)
-		return (this->_count);
-	
-	if (!(new_squad = new ISpaceMarine*[this->getCount() + 1]))
-		return (-1);
-	
+	while (i++ < this->_count)
+		if (this->_unity[i] == src)
+			return (this->_count);
+	new_squad = new ISpaceMarine*[this->getCount() + 1];
 	i = 0;
 	while (i < this->_count)
 	{
 		new_squad[i] = this->_unity[i];
 		i++;
 	}
-	//exit (1);
 	new_squad[i] = src;
-	while (i++ < this->_count)
-			delete this->_unity[i];
+/* 	while (i++ < this->_count)
+			delete this->_unity[i]; */
 	delete [] this->_unity;
-	this->_unity = new_squad;
-	this->setCount(this->getCount() + 1);
 	//this->setUnity(new_squad);
+	this->_unity = new_squad;
+	//delete [] new_squad;
+	++this->_count;
 	return (this->_count);
 }
