@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 11:13:30 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/03 15:42:20 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/03 16:57:03 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,16 +114,22 @@ int     Squad::push(ISpaceMarine *src)
 		i++;
 	if (this->getUnit(i) == src)
 		return (this->_count);
+	
 	if (!(new_squad = new ISpaceMarine*[this->getCount() + 1]))
 		return (-1);
+	
 	i = 0;
 	while (i < this->_count)
 	{
 		new_squad[i] = this->_unity[i];
 		i++;
 	}
+	//exit (1);
 	new_squad[i] = src;
-	delete[] this->_unity;
+	while (i++ < this->_count)
+			delete this->_unity[i];
+	delete [] this->_unity;
+	this->_unity = new_squad;
 	this->setCount(this->getCount() + 1);
 	//this->setUnity(new_squad);
 	return (this->_count);
