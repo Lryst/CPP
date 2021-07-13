@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:01:53 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/07 10:49:41 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/08 15:29:51 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Character::Character()
 
 Character::Character(std::string const & name) : _name(name), _ap(40)
 {
-	
 }
 
 Character::Character(Character const & cpy)
@@ -54,6 +53,8 @@ void	Character::equip(AWeapon * arm)
 
 void	Character::attack(Enemy * bad)
 {
+	if (bad->getHP() == 0)
+		return ;
 	if (bad && this->_arm && this->_ap > this->_arm->getAPCost())
 	{
 		std::cout << this->getName() <<  " attacks " << bad->getType() << " with a " << this->_arm->getName() << std::endl;
