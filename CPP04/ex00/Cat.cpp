@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 15:56:18 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/06 16:03:43 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 12:57:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_H
-# define POWERFIST_H
-# include <iostream>
-# include <string>
-# include "AWeapon.hpp"
+#include "Cat.hpp"
 
-class PowerFist : public AWeapon
+Cat::Cat()
 {
-    private :
+	this->type = "Cat";
+}
 
-    public:
-        PowerFist();
-        PowerFist(PowerFist const & cpy);
-        PowerFist & operator=(PowerFist const & src);
-        virtual ~PowerFist();
-		
-        virtual void attack() const;
-};
+Cat::Cat(Cat const & cpy)
+{
+	this->type = cpy.type;
+}
 
-#endif
+Cat const & Cat::operator=(Cat const & src)
+{
+	this->type = src.type;
+	return *this;
+}
+
+Cat::~Cat() {}

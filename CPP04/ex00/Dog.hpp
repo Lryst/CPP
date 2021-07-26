@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 18:01:12 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/06 18:02:29 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:57:35 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 12:59:20 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPIONT_H
-# define RADSCORPIONT_H
-# include "Enemy.hpp"
-# include <iostream>
-# include <string>
+#ifndef DOG_HPP
+# define DOG_HPP
+# include "Animal.hpp"
 
-class RadScorpion : public Enemy
+class Dog : public Animal
 {
-    private :
-
-    public:
-        RadScorpion();
-        RadScorpion(RadScorpion const & cpy);
-        RadScorpion & operator=(RadScorpion const & src);
-		virtual ~RadScorpion();
+    public :
+        Dog();
+        Dog(Dog const & cpy);
+        Dog const & operator=(Dog const & src);
+        ~Dog();
 };
 
 #endif

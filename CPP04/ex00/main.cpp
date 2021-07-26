@@ -5,21 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 12:43:18 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/05 15:09:45 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:28:59 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 13:11:01 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
-	Sorcerer robert("Robert", "the Magnificent");
-    Victim jim("Jimmy");
-    Peon joe("Joe");
-    
-    std::cout << robert << jim << joe;
-    robert.polymorph(jim);
-    robert.polymorph(joe);
-    return (0);
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    const WrongAnimal* k = new WrongAnimal();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    std::cout << k->getType() << " " << std::endl;
+    std::cout << meta->getType() << " " << std::endl;
+    j->makeSound();
+    i->makeSound(); //will output the cat sound!j->makeSound();
+    meta->makeSound();
+    k->makeSound();
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 14:22:08 by lryst             #+#    #+#             */
-/*   Updated: 2021/06/09 17:10:56 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:56:59 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 12:57:25 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_H
-# define IMATERIASOURCE_H
-# include "AMateria.hpp"
-# include <iostream>
+#include "Dog.hpp"
 
-class IMateriaSource
+Dog::Dog()
 {
-	public:
-		virtual ~IMateriaSource() {};
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
-};
+	this->type = "Dog";
+}
 
-#endif
+Dog::Dog(Dog const & cpy)
+{
+	this->type = cpy.type;
+}
+
+Dog const & Dog::operator=(Dog const & src)
+{
+	this->type = src.type;
+	return *this;
+}
+
+Dog::~Dog() {}

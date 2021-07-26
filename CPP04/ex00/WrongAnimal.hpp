@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 16:48:00 by lryst             #+#    #+#             */
-/*   Updated: 2021/05/06 16:34:51 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 13:06:39 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 13:12:25 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_H
-# define SUPERMUTANT_H
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
 # include <string>
-# include "Enemy.hpp"
 
-class SuperMutant : public Enemy
+class WrongAnimal
 {
-    private :
+	private :
+		std::string type;
 
-    public:
-        SuperMutant();
-        SuperMutant(SuperMutant const & cpy);
-        SuperMutant & operator=(SuperMutant const & src);
-		
-        virtual ~SuperMutant();
-		virtual void	takeDamage(int hurt);
+	public :
+		WrongAnimal();
+		WrongAnimal(WrongAnimal const & cpy);
+		WrongAnimal const & operator=(WrongAnimal const & src);
+		~WrongAnimal();
+
+		std::string getType() const;
+		void		makeSound() const;
 };
 
 #endif

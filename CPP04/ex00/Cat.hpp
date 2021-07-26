@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 14:21:47 by lryst             #+#    #+#             */
-/*   Updated: 2021/06/09 14:34:13 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:53:23 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 12:55:09 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_H
-# define CURE_H
-# include "AMateria.hpp"
-# include <iostream>
+#ifndef CAT_HPP
+# define CAT_HPP
+# include "Animal.hpp"
 
-class Cure : public AMateria
+class Cat : public Animal
 {
-    private :
-        std::string _type;
-
-    public :
-        Cure();
-        Cure(Cure const & cpy);
-        Cure & operator=(Cure const & src);
-        ~Cure();
-
-        virtual AMateria* clone() const;
+	public :
+		Cat();
+		Cat(Cat const & cpy);
+		Cat const & operator=(Cat const & src);
+		~Cat();
 };
 
 #endif

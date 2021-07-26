@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fairy.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 11:24:07 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/08 14:59:20 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:33:06 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 13:03:48 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FAIRY_H
-# define FAIRY_H
-# include "Victim.hpp"
-# include <iostream>
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 # include <string>
+# include <iostream>
 
-class Fairy : public Victim
+class Animal
 {
-	private :
-		Fairy();
-		
-	public :
-		Fairy(std::string name);
-		Fairy(Fairy const & cpy);
-		Fairy & operator=(Fairy const & src);
-		virtual ~Fairy();
-
-		std::string	getname();
-        void    getPolymorphed() const;
+    protected :
+        std::string type;
+    
+    public :
+        Animal();
+        Animal(Animal const & cpy);
+        Animal const & operator=(Animal const & src);
+        virtual ~Animal();
+        
+        std::string getType() const;
+        void        makeSound() const;
 };
-
-std::ostream & operator<<(std::ostream & o, Fairy & ret);
 
 #endif
