@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 13:06:39 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 13:45:37 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 13:48:47 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 14:19:59 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
-# include <iostream>
-# include <string>
+#include "Brain.hpp"
 
-class WrongAnimal
+Brain::Brain() {}
+
+Brain::Brain(Brain const & cpy)
 {
-	private :
-		std::string type;
+	this->_ideas = cpy._ideas;
+}
 
-	public :
-		WrongAnimal();
-		WrongAnimal(WrongAnimal const & cpy);
-		WrongAnimal const & operator=(WrongAnimal const & src);
-		~WrongAnimal();
+Brain const & Brain::operator=(Brain const & src)
+{
+	this->_ideas = src._ideas;
+	return *this;
+}
 
-		std::string getType() const;
-		void		makeSound() const;
-};
-
-#endif
+Brain::~Brain() {}

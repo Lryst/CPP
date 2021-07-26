@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 13:06:39 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 13:45:37 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 14:21:52 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
-# include <iostream>
-# include <string>
+#include "Cat.hpp"
 
-class WrongAnimal
+Cat::Cat()
 {
-	private :
-		std::string type;
+	this->type = "Cat";
+	this->_brain = new Brain();
+}
 
-	public :
-		WrongAnimal();
-		WrongAnimal(WrongAnimal const & cpy);
-		WrongAnimal const & operator=(WrongAnimal const & src);
-		~WrongAnimal();
+Cat::Cat(Cat const & cpy)
+{
+	this->type = cpy.type;
+}
 
-		std::string getType() const;
-		void		makeSound() const;
-};
+Cat const & Cat::operator=(Cat const & src)
+{
+	this->type = src.type;
+	return *this;
+}
 
-#endif
+Cat::~Cat() {delete [] _brain;}
