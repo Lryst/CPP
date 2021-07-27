@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:56:59 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/27 18:53:40 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/27 18:54:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-	std::cout << "Constructor Dog call" << std::endl;
-	this->type = "Dog";
+	std::cout << "Constructor Cat call" << std::endl;
+	this->type = "Cat";
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & cpy)
+Cat::Cat(Cat const & cpy)
 {
-	std::cout << "Copy Constructor Dog call" << std::endl;
+	std::cout << "Copy Constructor Cat call" << std::endl;
 	this->_brain = new Brain();
 	*(this->_brain) = *(cpy._brain);
 	this->type = cpy.type;
 }
 
-Dog const & Dog::operator=(Dog const & src)
+Cat const & Cat::operator=(Cat const & src)
 {
 	*(this->_brain) = *(src._brain);
 	this->type = src.type;
 	return *this;
 }
 
-Dog::~Dog() 
+Cat::~Cat()
 {
-	std::cout << "Destructor Dog call" << std::endl;
+	std::cout << "Destructor Cat call" << std::endl;
 	delete this->_brain;
 }
+
+void 

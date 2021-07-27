@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/27 18:16:38 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 13:48:39 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 14:18:18 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <iostream>
+# include <string>
 
-Cat::Cat()
+class Brain
 {
-	std::cout << "Constructor Cat call" << std::endl;
-	this->type = "Cat";
-}
+	private :
+		std::string _ideas[100];
 
-Cat::Cat(Cat const & cpy)
-{
-	std::cout << "Copy Constructor Cat call" << std::endl;
-	this->type = cpy.type;
-}
+	public :
+		Brain();
+		Brain(Brain const & cpy);
+		Brain const & operator=(Brain const & src);
+		~Brain();
+};
 
-Cat const & Cat::operator=(Cat const & src)
-{
-	this->type = src.type;
-	return *this;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Destructor Cat call" << std::endl;
-}
+#endif

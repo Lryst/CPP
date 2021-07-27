@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/27 18:16:38 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:57:35 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 14:16:40 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-Cat::Cat()
+class Dog : public Animal
 {
-	std::cout << "Constructor Cat call" << std::endl;
-	this->type = "Cat";
-}
+	  private :
+		  Brain *_brain;
+    
+    public :
+        Dog();
+        Dog(Dog const & cpy);
+        Dog const & operator=(Dog const & src);
+        ~Dog();
+};
 
-Cat::Cat(Cat const & cpy)
-{
-	std::cout << "Copy Constructor Cat call" << std::endl;
-	this->type = cpy.type;
-}
-
-Cat const & Cat::operator=(Cat const & src)
-{
-	this->type = src.type;
-	return *this;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Destructor Cat call" << std::endl;
-}
+#endif

@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/27 18:16:38 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 13:48:47 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/26 14:19:59 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat()
+Brain::Brain()
 {
-	std::cout << "Constructor Cat call" << std::endl;
-	this->type = "Cat";
+	std::cout << "Constructor Brain call" << std::endl;
 }
 
-Cat::Cat(Cat const & cpy)
+Brain::Brain(Brain const & cpy)
 {
-	std::cout << "Copy Constructor Cat call" << std::endl;
-	this->type = cpy.type;
+	std::cout << "Copy Constructor Brain call" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = cpy._ideas[i];
 }
 
-Cat const & Cat::operator=(Cat const & src)
+Brain const & Brain::operator=(Brain const & src)
 {
-	this->type = src.type;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = src._ideas[i];
 	return *this;
 }
 
-Cat::~Cat()
+Brain::~Brain()
 {
-	std::cout << "Destructor Cat call" << std::endl;
+	std::cout << "Destructor Brain call" << std::endl;
 }

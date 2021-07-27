@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:51:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/27 18:16:38 by lryst            ###   ########.fr       */
+/*   Created: 2021/07/26 12:33:06 by lryst             #+#    #+#             */
+/*   Updated: 2021/07/27 18:54:21 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <string>
+# include <iostream>
 
-Cat::Cat()
+class Animal
 {
-	std::cout << "Constructor Cat call" << std::endl;
-	this->type = "Cat";
-}
+    protected :
+        std::string type;
+    
+    public :
+        Animal();
+        Animal(Animal const & cpy);
+        Animal const & operator=(Animal const & src);
+        virtual ~Animal();
+        
+        std::string getType() const;
+        void        makeSound() const = 0;
+};
 
-Cat::Cat(Cat const & cpy)
-{
-	std::cout << "Copy Constructor Cat call" << std::endl;
-	this->type = cpy.type;
-}
-
-Cat const & Cat::operator=(Cat const & src)
-{
-	this->type = src.type;
-	return *this;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Destructor Cat call" << std::endl;
-}
+#endif
