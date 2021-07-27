@@ -14,19 +14,36 @@
 
 Cat::Cat()
 {
+	std::cout << "Constructor Cat call" << std::endl;
 	this->type = "Cat";
 	this->_brain = new Brain();
 }
 
 Cat::Cat(Cat const & cpy)
 {
+	std::cout << "Copy Constructor Cat call" << std::endl;
+	delete this->_brain;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100 ; i++)
+		this->_brain[i] = cpy._brain[i];
 	this->type = cpy.type;
+	this->type = cpy.type;
+	std::cout << &this->type << std::endl;
+	std::cout << &cpy.type << std::endl;
 }
 
 Cat const & Cat::operator=(Cat const & src)
 {
+	delete this->_brain;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100 ; i++)
+		this->_brain[i] = src._brain[i];
 	this->type = src.type;
 	return *this;
 }
 
-Cat::~Cat() {delete [] _brain;}
+Cat::~Cat()
+{
+	std::cout << "Destructor Cat call" << std::endl;
+	delete this->_brain;
+}

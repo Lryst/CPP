@@ -12,17 +12,26 @@
 
 #include "Brain.hpp"
 
-Brain::Brain() {}
+Brain::Brain()
+{
+	std::cout << "Constructor Brain call" << std::endl;
+}
 
 Brain::Brain(Brain const & cpy)
 {
-	this->_ideas = cpy._ideas;
+	std::cout << "Copy Constructor Brain call" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = cpy._ideas[i];
 }
 
 Brain const & Brain::operator=(Brain const & src)
 {
-	this->_ideas = src._ideas;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = src._ideas[i];
 	return *this;
 }
 
-Brain::~Brain() {}
+Brain::~Brain()
+{
+	std::cout << "Destructor Brain call" << std::endl;
+}

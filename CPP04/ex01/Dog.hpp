@@ -17,8 +17,9 @@
 
 class Dog : public Animal
 {
-	private :
-		Brain *_brain;
+	  private :
+		  Brain *_brain;
+    
     public :
         Dog();
         Dog(Dog const & cpy);

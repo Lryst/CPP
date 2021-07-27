@@ -12,10 +12,14 @@
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("NULL") {}
+Animal::Animal() : type("NULL")
+{
+	std::cout << "Constructor Animal call" << std::endl;
+}
 
 Animal::Animal(Animal const & cpy)
 {
+	std::cout << "Copy Constructor Animal call" << std::endl;
 	this->type = cpy.type;
 }
 
@@ -25,7 +29,10 @@ Animal const & Animal::operator=(Animal const & src)
 	return *this;
 }
 
-Animal::~Animal() {}
+Animal::~Animal()
+{
+	std::cout << "Destructor Animal call" << std::endl;
+}
 
 std::string Animal::getType() const
 {

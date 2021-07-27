@@ -16,16 +16,31 @@
 
 int main()
 {
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
+    //system("leaks ex01");
+}
+
+/* int main()
+{
+    //Animal tab[6];
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
+    const Cat* m = new Cat();
+    const Cat* l = new Cat(*m);
     const WrongAnimal* k = new WrongAnimal();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     std::cout << k->getType() << " " << std::endl;
+    std::cout << l->getType() << " " << std::endl;
     std::cout << meta->getType() << " " << std::endl;
     j->makeSound();
     i->makeSound(); //will output the cat sound!j->makeSound();
     meta->makeSound();
     k->makeSound();
+    //system ("leaks ex01");
 }
+ */

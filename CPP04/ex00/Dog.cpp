@@ -14,11 +14,13 @@
 
 Dog::Dog()
 {
+	std::cout << "Constructor Dog call" << std::endl;
 	this->type = "Dog";
 }
 
 Dog::Dog(Dog const & cpy)
 {
+	std::cout << "Copy Constructor Dog call" << std::endl;
 	this->type = cpy.type;
 }
 
@@ -28,4 +30,7 @@ Dog const & Dog::operator=(Dog const & src)
 	return *this;
 }
 
-Dog::~Dog() {}
+Dog::~Dog()
+{
+	std::cout << "Destructor Dog call" << std::endl;
+}

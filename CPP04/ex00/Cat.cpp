@@ -14,12 +14,16 @@
 
 Cat::Cat()
 {
+	std::cout << "Constructor Cat call" << std::endl;
 	this->type = "Cat";
 }
 
 Cat::Cat(Cat const & cpy)
 {
+	std::cout << "Copy Constructor Cat call" << std::endl;
 	this->type = cpy.type;
+	std::cout << &this->type << std::endl;
+	std::cout << &cpy.type << std::endl;
 }
 
 Cat const & Cat::operator=(Cat const & src)
@@ -28,4 +32,7 @@ Cat const & Cat::operator=(Cat const & src)
 	return *this;
 }
 
-Cat::~Cat() {}
+Cat::~Cat()
+{
+	std::cout << "Destructor Cat call" << std::endl;
+}

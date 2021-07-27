@@ -12,10 +12,14 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type("WrongAnimal") {}
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
+{
+	std::cout << "Constructor Wrong Animal call" << std::endl;
+}
 
 WrongAnimal::WrongAnimal(WrongAnimal const & cpy)
 {
+	std::cout << "Copy Constructor Wrong Animal call" << std::endl;
 	this->type = cpy.type;
 }
 
@@ -25,7 +29,10 @@ WrongAnimal const & WrongAnimal::operator=(WrongAnimal const & src)
 	return *this;
 }
 
-WrongAnimal::~WrongAnimal() {}
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "Destructor Wrong Animal call" << std::endl;
+}
 
 std::string WrongAnimal::getType() const
 {
