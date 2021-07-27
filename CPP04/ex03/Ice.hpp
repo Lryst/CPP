@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:53:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 14:16:49 by lryst            ###   ########.fr       */
+/*   Created: 2021/05/25 14:21:58 by lryst             #+#    #+#             */
+/*   Updated: 2021/06/09 14:34:09 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef ICE_H
+# define ICE_H
+# include "AMateria.hpp"
+# include <iostream>
 
-class Cat : public Animal
+class Ice : public AMateria
 {
-	private :
-		Brain *_brain;
-	public :
-		Cat();
-		Cat(Cat const & cpy);
-		Cat const & operator=(Cat const & src);
-		~Cat();
+    private :
+        std::string _type;
+        
+    public :
+        Ice();
+        Ice(Ice const & cpy);
+        Ice & operator=(Ice const & src);
+        ~Ice();
 
-		void	makeSound() const;
+        virtual AMateria* clone() const;
 };
 
 #endif

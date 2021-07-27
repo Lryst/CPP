@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:53:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 14:16:49 by lryst            ###   ########.fr       */
+/*   Created: 2021/05/25 14:21:53 by lryst             #+#    #+#             */
+/*   Updated: 2021/06/09 17:57:18 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#include "Ice.hpp"
 
-class Cat : public Animal
+Ice::Ice() : AMateria("ice")
+{}
+
+Ice::Ice(Ice const & cpy)
 {
-	private :
-		Brain *_brain;
-	public :
-		Cat();
-		Cat(Cat const & cpy);
-		Cat const & operator=(Cat const & src);
-		~Cat();
+    *this = cpy;    
+}
 
-		void	makeSound() const;
-};
+Ice & Ice::operator=(Ice const & src)
+{
+    this->_type = src._type;
+    return *this;
+}
+Ice::~Ice(){}
 
-#endif
+AMateria * Ice::clone() const
+{
+    AMateria *nv = new Ice();
+    return nv;
+}

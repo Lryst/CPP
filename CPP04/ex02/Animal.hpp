@@ -17,17 +17,17 @@
 
 class Animal
 {
-    protected :
-        std::string type;
-    
-    public :
-        Animal();
-        Animal(Animal const & cpy);
-        Animal const & operator=(Animal const & src);
-        virtual ~Animal();
-        
-        std::string getType() const;
-        void        makeSound() const = 0;
+	protected :
+		std::string type;
+	
+	public :
+		Animal();
+		Animal(Animal const & cpy);
+		Animal const & operator=(Animal const & src);
+		virtual ~Animal();
+		
+		std::string		getType() const;
+		virtual void	makeSound() const = 0;
 };
 
 #endif

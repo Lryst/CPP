@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:53:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 14:16:49 by lryst            ###   ########.fr       */
+/*   Created: 2021/05/25 16:51:09 by lryst             #+#    #+#             */
+/*   Updated: 2021/06/09 16:50:52 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#include "Cure.hpp"
 
-class Cat : public Animal
+Cure::Cure() : AMateria("cure")
+{}
+
+Cure::Cure(Cure const & cpy)
 {
-	private :
-		Brain *_brain;
-	public :
-		Cat();
-		Cat(Cat const & cpy);
-		Cat const & operator=(Cat const & src);
-		~Cat();
+    *this = cpy;    
+}
 
-		void	makeSound() const;
-};
+Cure & Cure::operator=(Cure const & src)
+{
+    this->_type = src._type;
+    return *this;
+}
+Cure::~Cure(){}
 
-#endif
+AMateria * Cure::clone() const
+{
+    AMateria *nv = new Cure();
+    return nv;
+}

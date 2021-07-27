@@ -38,13 +38,3 @@ std::string Animal::getType() const
 {
 	return this->type;
 }
-
-void Animal::makeSound() const
-{
-	if (this->getType() == "Dog")
-		std::cout << "Wouf" << std::endl;
-	if (this->getType() == "Cat")
-		std::cout << "Miaou" <<std::endl;
-	else
-		return;
-}

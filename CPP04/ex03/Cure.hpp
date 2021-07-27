@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 12:53:23 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/26 14:16:49 by lryst            ###   ########.fr       */
+/*   Created: 2021/05/25 14:21:47 by lryst             #+#    #+#             */
+/*   Updated: 2021/06/09 14:34:13 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
+# include "AMateria.hpp"
+# include <iostream>
 
-class Cat : public Animal
+class Cure : public AMateria
 {
-	private :
-		Brain *_brain;
-	public :
-		Cat();
-		Cat(Cat const & cpy);
-		Cat const & operator=(Cat const & src);
-		~Cat();
+    private :
+        std::string _type;
 
-		void	makeSound() const;
+    public :
+        Cure();
+        Cure(Cure const & cpy);
+        Cure & operator=(Cure const & src);
+        ~Cure();
+
+        virtual AMateria* clone() const;
 };
 
 #endif
