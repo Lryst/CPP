@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:21:27 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/30 17:09:27 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/30 17:17:32 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FORM_HPP
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
 
 class Form
 {
