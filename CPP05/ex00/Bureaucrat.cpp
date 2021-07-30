@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/29 16:56:08 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/30 16:41:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,14 @@ int			Bureaucrat::getGrade() const
 
 void		Bureaucrat::inc_grade()
 {
-	this->_grade++;
+	if (this->_grade < 150)
+		this->_grade++;
 }
 
 void		Bureaucrat::dec_grade()
 {
-	this->_grade--;
+	if (this->_grade > 1)
+		this->_grade--;
 }
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & src)

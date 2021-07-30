@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:18:34 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/29 16:27:50 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/30 16:39:53 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,10 @@ int main()
 	Bureaucrat b("Courgette", 0);
 	Bureaucrat c("Hip-Hop", 151);
 
+	std::cout << a << std::endl;
+	a.dec_grade();
+	std::cout << a << std::endl;
+	a.dec_grade();
+	a.dec_grade();
 	std::cout << a << std::endl;
 }

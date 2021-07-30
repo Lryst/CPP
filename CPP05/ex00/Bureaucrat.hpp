@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:46 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/29 16:55:37 by lryst            ###   ########.fr       */
+/*   Updated: 2021/07/30 16:33:37 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Bureaucrat
 		public :
 			virtual const char* what() const throw()
 			{
-				return ("The grade is to too high.");
+				return ("The grade is too high.");
 			}
 	}high;
 
