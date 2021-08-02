@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:18:34 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:08:32 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:30:39 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main()
 {
+	srand (time(NULL));
+	
 	Bureaucrat a("Bob", 3);
 	Bureaucrat a2("Jessica", 16);
 	Bureaucrat b("Courgette", 0);

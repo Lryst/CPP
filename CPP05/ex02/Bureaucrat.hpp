@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:46 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:27:45 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:58:00 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Bureaucrat
 {
 	private :
 		std::string _name;
-		int			_garde_request;
+		int			_grade_request;
 
 	public :
 		Bureaucrat();
@@ -37,6 +37,7 @@ class Bureaucrat
 		void		inc_garde_request();
 		void		dec_garde_request();
 		void		signForm(Form & doc);
+		void		executeForm(Form Const & form);
 		
 	class GradeTooHighException : public std::exception
 	{
@@ -55,6 +56,15 @@ class Bureaucrat
 				return ("The grade is too low.");
 			}
 	}low;
+	
+	class FormNotSignedYet : public std::exception
+	{
+		public :
+			virtual const char* what() const throw()
+			{
+				return ("This form is not signed.");
+			}
+	}not_signed;
 };
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & src);

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:27:45 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 18:01:12 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,18 @@ void		Bureaucrat::signForm(Form & doc)
 	}
 	if (doc.getStatus() == 1)
 		std::cout << this->getName() << " cannot sign because " << doc.getRaison() << std::endl;
+}
+
+void		Bureaucrat::executeForm(Form Const & form)
+{
+	try
+	{
+		form.execute(this);	
+	}
+	catch (std::exception& e)
+	{
+		
+	}
 }
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & src)

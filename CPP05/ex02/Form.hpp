@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:21:27 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:28:02 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:53:07 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ class Form
 		void		setRaison(std::string raison);
 
 		void		beSigned(Bureaucrat & bur);
+
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 		
 	class GradeTooHighException : public std::exception
 	{
@@ -62,6 +64,15 @@ class Form
 				return ("The grade of this form is too low."); 
 			}
 	}low;
+
+	class AlreadySignedException : public std::exception
+	{
+		public :
+			virtual const char* what() const throw()
+			{
+				return ("The form is already signed."); 
+			}
+	}already;
 };
 
 std::ostream & operator<<(std::ostream & os, Form const & src);

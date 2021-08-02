@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:34:18 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:28:40 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:58:57 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,13 @@ void		Form::setRaison(std::string raison)
 
 void        Form::beSigned(Bureaucrat & bur)
 {
-	if (this->_status == 1)
-		this->_raison = "the form " + this->_name + " is already signed\n";
 	try
 	{
+		if (this->_status == 1)
+		{
+			throw already;
+			this->_raison = "the form " + this->_name + " is already signed\n";
+		}
 		if (bur.getGradeR() > this->_garde_request)
 		{
 			this->_raison = "the grade of this form is too low.";
@@ -109,9 +112,31 @@ void        Form::beSigned(Bureaucrat & bur)
 	}
 	catch (std::exception& e)
 	{
-		std::cout << e.what()<< std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }
+
+void		Form::execute(Bureaucrat const & executor) const
+{
+	try
+	{
+		if (this->_status == 1)
+		{
+			throw already;
+			this->_raison = "the form " + this->_name + " is already signed\n";
+		}
+		if (bur.getGradeA() > this->_garde_request)
+		{
+			this->_raison = "the grade of this form is too low.";
+			throw low;
+		}
+	}
+	catch (std::exception& e)
+	{
+		std::cout < e.what() << std::endl;
+	}
+}
+
 
 std::ostream & operator<<(std::ostream & os, Form const & src)
 {

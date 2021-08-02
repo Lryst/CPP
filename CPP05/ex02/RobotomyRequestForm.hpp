@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:04:26 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:12:50 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:04:28 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class RobotomyRequestForm : public class Form
 		RobotomyRequestForm(RobotomyRequestForm const & cpy);
 		RobotomyRequestForm const & operator=(RobotomyRequestForm const & src);
 		~RobotomyRequestForm();
+
+		void		execute(Bureaucrat const & executor) const;
+};
 
 #endif

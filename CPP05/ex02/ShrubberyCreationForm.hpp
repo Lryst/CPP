@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:05:58 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 16:12:54 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 17:36:58 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include <fstream>
+# include <sstream>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public class Form
@@ -28,5 +30,8 @@ class ShrubberyCreationForm : public class Form
 		ShrubberyCreationForm(ShrubberyCreationForm const & cpy);
 		ShrubberyCreationForm const & operator=(ShrubberyCreationForm const & src);
 		~ShrubberyCreationForm();
+		
+		void		execute(Bureaucrat const & executor) const;
+};
 
 #endif
