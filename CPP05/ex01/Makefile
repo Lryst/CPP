@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 15:18:29 by lryst             #+#    #+#              #
-#    Updated: 2021/07/29 15:21:08 by lryst            ###   ########.fr        #
+#    Updated: 2021/08/01 19:36:12 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME = ex00
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

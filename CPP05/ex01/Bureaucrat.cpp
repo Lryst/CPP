@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/30 17:03:30 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/01 19:36:27 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		Bureaucrat::dec_grade()
 		this->_grade--;
 }
 
-void		Bureaucrat::signForm(Form & doc)
+void		Bureaucrat::signForm(Form const & doc)
 {
 	if (doc.getStatus() == 0)
 		std::cout << this->getName() << " signs " << doc.getName() << std::endl;

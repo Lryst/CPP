@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:21:27 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/30 17:17:32 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/01 19:37:58 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private :
+		std::string	_name;
+		int		_grade;
 		bool	_status;
-		std::string const	_name;
-		int const		_grade;
 		std::string		_raison;
 
 	public :

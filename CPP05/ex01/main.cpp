@@ -6,12 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:18:34 by lryst             #+#    #+#             */
-/*   Updated: 2021/07/30 16:39:53 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/01 14:19:58 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+//#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
