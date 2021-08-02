@@ -6,13 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:21 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 14:42:53 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 16:27:45 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(75) {}
+Bureaucrat::Bureaucrat() : _name("default"), _garde_request(75) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 		else
 		{
 			this->_name = name;
-			this->_grade = grade;
+			this->_garde_request = grade;
 		}
 	}
 	catch (std::exception& e)
@@ -36,13 +36,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat const & cpy)
 {
-	this->_grade = cpy._grade;
+	this->_garde_request = cpy._garde_request;
 	this->_name = cpy._name;
 }
 
 Bureaucrat const & Bureaucrat::operator=(Bureaucrat const & src)
 {
-	this->_grade = src._grade;
+	this->_garde_request = src._garde_request;
 	this->_name = src._name;
 	return *this;
 }
@@ -54,21 +54,21 @@ std::string	Bureaucrat::getName() const
 	return this->_name;
 }
 
-int			Bureaucrat::getGrade() const
+int			Bureaucrat::getGradeR() const
 {
-	return this->_grade;
+	return this->_garde_request;
 }
 
-void		Bureaucrat::inc_grade()
+void		Bureaucrat::inc_garde_request()
 {
-	if (this->_grade < 150)
-		this->_grade++;
+	if (this->_garde_request < 150)
+		this->_garde_request++;
 }
 
-void		Bureaucrat::dec_grade()
+void		Bureaucrat::dec_garde_request()
 {
-	if (this->_grade > 1)
-		this->_grade--;
+	if (this->_garde_request > 1)
+		this->_garde_request--;
 }
 
 void		Bureaucrat::signForm(Form & doc)
@@ -84,6 +84,6 @@ void		Bureaucrat::signForm(Form & doc)
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & src)
 {
-	os << src.getName() << ", bureaucrat grade " << src.getGrade();	
+	os << src.getName() << ", bureaucrat grade " << src.getGradeR();	
 	return (os);
 }

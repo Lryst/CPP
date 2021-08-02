@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:21:27 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/01 19:37:58 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 14:41:19 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,17 @@ class Form
 		bool		getStatus()const;
 		std::string	getRaison()const;
 		
-		void		setStatus(std::string const raison);
+		void		setStatus(bool i);
+		void		setRaison(std::string raison);
 
-		void		beSigned(Bureaucrat const & bur);
+		void		beSigned(Bureaucrat & bur);
 		
 	class GradeTooHighException : public std::exception
 	{
 		public :
 			virtual const char* what() const throw()
 			{
-				return ("The grade of this form is too high.");
+				return ("The grade of form is too high.");
 			}
 	}high;
 
@@ -56,7 +57,7 @@ class Form
 		public :
 			virtual const char* what() const throw()
 			{
-				return ("The grade of this form is too low.");
+				return ("The grade of this form is too low."); 
 			}
 	}low;
 };

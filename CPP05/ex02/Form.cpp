@@ -6,13 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:34:18 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 15:24:32 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 16:28:40 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("default"), _grade(75), _status(0), _raison("\0") {}
+Form::Form() : _name("default"), _garde_request(75), _grade_action(150), _status(0), _raison("\0") {}
 
 Form::Form(std::string name, int grade)
 {
@@ -25,7 +25,8 @@ Form::Form(std::string name, int grade)
 		else
 		{
 			this->_name = name;
-			this->_grade = grade;
+			this->_garde_request = grade;
+			this->_grade_action = 150;
 			this->_status = 0;
 			this->_raison = "\0";
 		}
@@ -38,7 +39,8 @@ Form::Form(std::string name, int grade)
 
 Form::Form(Form const & cpy)
 {
-	this->_grade = cpy._grade;
+	this->_garde_request = cpy._garde_request;
+	this->_grade_action = cpy._grade_action;
 	this->_name = cpy._name;
 	this->_status = cpy._status;
 	this->_raison = cpy._raison;
@@ -46,7 +48,8 @@ Form::Form(Form const & cpy)
 
 Form const & Form::operator=(Form const & src)
 {
-	this->_grade = src._grade;
+	this->_garde_request = src._garde_request;
+	this->_grade_action = cpy._grade_action;
 	this->_name = src._name;
 	this->_status = src._status;
 	this->_raison = src._raison;
@@ -60,9 +63,14 @@ std::string	Form::getName() const
 	return this->_name;
 }
 
-int			Form::getGrade() const
+int			Form::getGradeR() const
 {
-	return this->_grade;
+	return this->_garde_request;
+}
+
+int			Form::getGradeA() const
+{
+	return this->_grade_action:
 }
 
 bool        Form::getStatus() const
@@ -91,7 +99,7 @@ void        Form::beSigned(Bureaucrat & bur)
 		this->_raison = "the form " + this->_name + " is already signed\n";
 	try
 	{
-		if (bur.getGrade() > this->_grade)
+		if (bur.getGradeR() > this->_garde_request)
 		{
 			this->_raison = "the grade of this form is too low.";
 			throw low;
@@ -108,8 +116,8 @@ void        Form::beSigned(Bureaucrat & bur)
 std::ostream & operator<<(std::ostream & os, Form const & src)
 {
 	if (src.getStatus() == 1)
-		os << "The form " << src.getName() << " has " << src.getGrade() << ", is signed" << std::endl;
+		os << "The form " << src.getName() << " has " << src.getGradeR() << ", is signed" << std::endl;
 	if (src.getStatus() == 0)
-		os << "The form " << src.getName() << " has " << src.getGrade() << ", is not signed" << std::endl;
+		os << "The form " << src.getName() << " has " << src.getGradeR() << ", is not signed" << std::endl;
 	return (os);
 }

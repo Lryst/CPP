@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 15:18:29 by lryst             #+#    #+#              #
-#    Updated: 2021/08/02 13:31:47 by lryst            ###   ########.fr        #
+#    Updated: 2021/08/02 16:05:51 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ NAME = ex01
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberryCreationForm.cpp \
+		PresidentialPardonForm.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

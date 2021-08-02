@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:18:34 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 15:24:59 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/02 16:08:32 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ int main()
 	std::cout << f;
 	f.beSigned(a);
 	std::cout << f;
-	a2.dec_grade();
+	a2.dec_garde_request();
 	std::cout << f;
 	f.beSigned(a2);
 	std::cout << f << std::endl;
 	std::cout << d;
 	std::cout << e;
 	std::cout << a << std::endl;
-	a.dec_grade();
+	a.dec_garde_request();
 	std::cout << a << std::endl;
-	a.dec_grade();
-	a.dec_grade();
+	a.dec_garde_request();
+	a.dec_garde_request();
 	std::cout << a << std::endl;
 }
