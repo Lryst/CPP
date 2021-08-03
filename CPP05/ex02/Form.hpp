@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 16:21:27 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 17:53:07 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 13:49:58 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ class Form
 {
 	private :
 		std::string	_name;
-		int		_garde_request;
+		int		_grade_request;
 		int		_grade_action;
 		bool	_status;
 		std::string		_raison;
 
 	public :
 		Form();
-		Form(std::string name, int _garde_request);
+		Form(std::string name, int _grade_request, int _grade_action);
 		Form(Form const & cpy);
 		Form const & operator=(Form const & src);
-		virtaul ~Form();
+		virtual ~Form();
 
 		std::string getName() const;
 		int			getGradeR() const;
@@ -40,6 +40,9 @@ class Form
 		bool		getStatus()const;
 		std::string	getRaison()const;
 		
+		void		setName(std::string name);
+		void		setGradeR(int i);
+		void		setGradeA(int i);
 		void		setStatus(bool i);
 		void		setRaison(std::string raison);
 

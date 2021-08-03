@@ -6,33 +6,35 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:05:06 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 17:51:08 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 13:51:35 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.cpp"
+#include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 25, 5) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 25, 5) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 25, 5), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & cpy)
 {
-	this->_garde_request = cpy._garde_request;
-	this->_name = cpy._name;
-	this->_status = cpy._status;
-	this->_raison = cpy._raison;
-	this->_grade_action = cpy._grade_action;
-	this->_target = cpy.target;
+	this->setGradeR(cpy.getGradeR());
+	//this->setGradeA(cpy.getGradeA());
+	this->_grade_action = 137;
+	this->setName(cpy.getName());
+	this->setStatus(cpy.getStatus());
+	this->setRaison(cpy.getRaison());
+	this->_target = cpy._target;
 }
 
 ShrubberyCreationForm const & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & src)
 {
-	this->_garde_request = cpy._garde_request;
-	this->_name = cpy._name;
-	this->_status = cpy._status;
-	this->_raison = cpy._raison;
-	this->_grade_action = cpy._grade_action;
+	this->setGradeR(src.getGradeR());
+	//this->setGradeA(src.getGradeA());
+	this->_grade_action = 137;
+	this->setName(src.getName());
+	this->setStatus(src.getStatus());
+	this->setRaison(src.getRaison());
 	this->_target = src._target;
 
 	return *this;
@@ -48,37 +50,37 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::ofstream ofs(filename);
 	try
 	{
-		Form:execute(executor);
+		Form::execute(executor);
 	}
 	catch (std::string& e)
 	{
 		throw ;
 	}
-	ofs << "						vv\n
-							vvv^^^^vvvvv\n
-						vvvvvvvvv^^vvvvvv^^vvvvv\n
-				vvvvvvvvvvv^^^^^^^^^^^^^vvvvv^^^vvvvv\n
-			vvvvvvv^^^^^^^^^vvv^^^^^^^vvvvvvvvvvv^^^vvv\n
-		vvvv^^^^^^vvvvv^^^^^^^vv^^^^^^^vvvv^^^vvvvvv\n
-		vv^^^^^^^^vvv^^^^^vv^^^^vvvvvvvvvvvv^^^^^^vv^\n
-		vvv^^^^^vvvv^^^^^^vvvvv^^vvvvvvvvv^^^^^^vvvvv^\n
-		vvvvvvvvvv^^^v^^^vvvvvv^^vvvvvvvvvv^^^vvvvvvvvv\n
-		^vv^^^vvvvvvv^^vvvvv^^^^^^^^vvvvvvvvv^^^^^^vvvvvv\n
-			^vvvvvvvvv^^^^vvvvvv^^^^^^vvvvvvvv^^^vvvvvvvvvv^v\n
-				^^^^^^vvvv^^vvvvv^vvvv^^^v^^^^^^vvvvvv^^^^vvvvv\n
-		vvvv^^vvv^^^vvvvvvvvvv^vvvvv^vvvvvv^^^vvvvvvv^^vvvvv^\n
-		vvv^vvvvv^^vvvvvvv^^vvvvvvv^^vvvvv^v##vvv^vvvv^^vvvvv^v\n
-		^vvvvvv^^vvvvvvvv^vv^vvv^^^^^^_____##^^^vvvvvvvv^^^^\n
-			^^vvvvvvv^^vvvvvvvvvv^^^^/\@@@@@@\#vvvv^^^\n
-				^^vvvvvv^^^^^^vvvvv/__\@@@@@@\^vvvv^v\n
-					;^^vvvvvvvvvvv/____\@@@@@@\vvvvvvv\n
-					;      \_  ^\|[  -:] ||--| | _/^^\n
-					;        \   |[   :] ||_/| |/\n
-					;         \\ ||___:]______/\n
-					;          \   ;=; /\n
-					;           |  ;=;|\n
-					;          ()  ;=;|\n
-					(()          || ;=;|\n
-								/ / \;=;\\n";
+	ofs << "								vv\n";
+	ofs << "						vvv^^^^vvvvv\n";
+	ofs << "					vvvvvvvvv^^vvvvvv^^vvvvv\n";
+	ofs << "			vvvvvvvvvvv^^^^^^^^^^^^^vvvvv^^^vvvvv\n";
+	ofs << "		vvvvvvv^^^^^^^^^vvv^^^^^^^vvvvvvvvvvv^^^vvv\n";
+	ofs << "	vvvv^^^^^^vvvvv^^^^^^^vv^^^^^^^vvvv^^^vvvvvv\n";
+	ofs << "	vv^^^^^^^^vvv^^^^^vv^^^^vvvvvvvvvvvv^^^^^^vv^\n";
+	ofs << "	vvv^^^^^vvvv^^^^^^vvvvv^^vvvvvvvvv^^^^^^vvvvv^\n";
+	ofs << "	vvvvvvvvvv^^^v^^^vvvvvv^^vvvvvvvvvv^^^vvvvvvvvv\n";
+	ofs << "	^vv^^^vvvvvvv^^vvvvv^^^^^^^^vvvvvvvvv^^^^^^vvvvvv\n";
+	ofs << "		^vvvvvvvvv^^^^vvvvvv^^^^^^vvvvvvvv^^^vvvvvvvvvv^v\n";
+	ofs << "			^^^^^^vvvv^^vvvvv^vvvv^^^v^^^^^^vvvvvv^^^^vvvvv\n";
+	ofs << "	vvvv^^vvv^^^vvvvvvvvvv^vvvvv^vvvvvv^^^vvvvvvv^^vvvvv^\n";
+	ofs << "	vvv^vvvvv^^vvvvvvv^^vvvvvvv^^vvvvv^v##vvv^vvvv^^vvvvv^v\n";
+	ofs << "	^vvvvvv^^vvvvvvvv^vv^vvv^^^^^^_____##^^^vvvvvvvv^^^^\n";
+	ofs << "		^^vvvvvvv^^vvvvvvvvvv^^^^/\\@@@@@@\\#vvvv^^^\n";
+	ofs << "			^^vvvvvv^^^^^^vvvvv/__\\@@@@@@\\^vvvv^v\n";
+	ofs << "				;^^vvvvvvvvvvv/____\\@@@@@@\vvvvvvv\n";
+	ofs << "				;      \\_  ^\\|[  -:] ||--| | _/^^\n";
+	ofs << "				;        \\   |[   :] ||_/| |/\n";
+	ofs << "				;         \\ ||___:]______/\n";
+	ofs << "				;          \\   ;=; /\n";
+	ofs << "				;           |  ;=;|\n";
+	ofs << "				;          ()  ;=;|\n";
+	ofs << "				(()          || ;=;|\n";
+	ofs << "							/ / \\;=;\\n";
 	ofs.close();
 }

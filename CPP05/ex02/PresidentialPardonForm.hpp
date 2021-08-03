@@ -6,28 +6,32 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:02:03 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 17:04:34 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 13:30:46 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
-# include <iostream>
-# include <string>
-# include <exception>
 # include "Form.hpp"
 
-class PresidentialPardonForm : public class Form
+class PresidentialPardonForm : public Form
 {
 	private :
-		std::string	target;
+		int _grade_action;
+		std::string	_target;
 
 	public :
 		PresidentialPardonForm();
-		PresidentialPardonForm(std::string name, int grade_request);
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(PresidentialPardonForm const & cpy);
 		PresidentialPardonForm const & operator=(PresidentialPardonForm const & src);
 		~PresidentialPardonForm();
+
+		/* std::string getTarget();
+		int			getGradeA();
+
+		void		setTarget(std::string target);
+		void		setGradeA(int i); */
 
 		void		execute(Bureaucrat const & executor) const;
 };

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:46 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/02 17:58:00 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 11:01:32 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ class Bureaucrat
 
 		std::string getName() const;
 		int			getGradeR() const;
-		void		inc_garde_request();
-		void		dec_garde_request();
+		void		inc_grade_request();
+		void		dec_grade_request();
 		void		signForm(Form & doc);
-		void		executeForm(Form Const & form);
+		void		executeForm(Form const & form);
 		
 	class GradeTooHighException : public std::exception
 	{
