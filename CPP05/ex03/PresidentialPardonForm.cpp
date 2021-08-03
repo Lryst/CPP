@@ -6,15 +6,15 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:01:43 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/03 15:40:54 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 15:42:05 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 145, 137) {}
+PresidentialPardonForm::PresidentialPardonForm() : Form("presidential pardon", 145, 137) {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 145, 137), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("presidential pardon", 145, 137), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & cpy)
 {

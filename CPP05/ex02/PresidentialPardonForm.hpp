@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:02:03 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/03 13:30:46 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 15:41:06 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(PresidentialPardonForm const & cpy);
 		PresidentialPardonForm const & operator=(PresidentialPardonForm const & src);
 		~PresidentialPardonForm();
-
-		/* std::string getTarget();
-		int			getGradeA();
-
-		void		setTarget(std::string target);
-		void		setGradeA(int i); */
 
 		void		execute(Bureaucrat const & executor) const;
 };

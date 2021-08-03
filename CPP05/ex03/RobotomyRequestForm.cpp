@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 16:01:43 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/03 15:40:54 by lryst            ###   ########.fr       */
+/*   Created: 2021/08/02 16:04:07 by lryst             #+#    #+#             */
+/*   Updated: 2021/08/03 15:42:30 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm() : Form("robotomy request", 72, 45) {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 145, 137), _target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("robotomy request", 72, 45), _target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & cpy)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & cpy)
 {
+
 	this->setGradeR(cpy.getGradeR());
-	this->_grade_action = 137;
+	this->_grade_action = 45;
 	this->setName(cpy.getName());
 	this->setStatus(cpy.getStatus());
 	this->setRaison(cpy.getRaison());
 	this->_target = cpy._target;
 }
 
-PresidentialPardonForm const & PresidentialPardonForm::operator=(PresidentialPardonForm const & src)
+RobotomyRequestForm const & RobotomyRequestForm::operator=(RobotomyRequestForm const & src)
 {
 	this->setGradeR(src.getGradeR());
-	this->_grade_action = 137;
+	this->_grade_action = 45;
 	this->setName(src.getName());
 	this->setStatus(src.getStatus());
 	this->setRaison(src.getRaison());
@@ -38,10 +39,13 @@ PresidentialPardonForm const & PresidentialPardonForm::operator=(PresidentialPar
 	return *this;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm(){}
+RobotomyRequestForm::~RobotomyRequestForm(){}
 
-void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	int i;
+
+	i = rand() % 2;
 	try
 	{
 		Form::execute(executor);
@@ -50,5 +54,9 @@ void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	{
 		throw ;
 	}
-	std::cout << executor.getName() << " was forgiven by Zafod Beeblebrox." << std::endl;
+	std::cout << "Brrrzzzz.....";
+	if (i == 0)
+		std::cout << executor.getName() << " has been robotomized." << std::endl;
+	else
+		std::cout << executor.getName() << " was not well robotomized." << std::endl;
 }
