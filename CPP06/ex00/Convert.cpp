@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:48:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/05 23:45:54 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/06 01:07:49 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Convert::Convert() {}
 
-Convert::Convert(std::string cast) : _cast(cast)
+Convert::Convert(std::string cast) : _cast(cast), _type(-2)
 {
 	int count;
 
@@ -40,7 +40,27 @@ Convert const & Convert::operator=(Convert const & src)
 
 Convert::~Convert() {}
 
-void	Convert::cast_to_int()
+void		Convert::setType(int type)
+{
+	this->_type = type;
+}
+
+int			Convert::getType()
+{
+	return (this->_type);
+}
+
+int			Convert::casting()
+{
+	this->_type == 1 ? this->cast_from_char() : 0;
+	this->_type == 2 ? this->cast_from_int() : 0;
+	this->_type == 3 ? this->cast_from_float() : 0;
+	this->_type == 4 ? this->cast_from_double() : 0;
+	this->_type == 5 ? this->cast_spe() : 0;
+	this->_type == 6 ? this->cast_spef() :0;
+}
+/*
+void	Convert::cast_from_int()
 {
 	int ret;
 
@@ -49,7 +69,7 @@ void	Convert::cast_to_int()
 		std::cout << "impossible" << std::endl;
 }
 
-void	Convert::cast_to_char()
+void	Convert::cast_from_char()
 {
 	char ret;
 
@@ -58,12 +78,12 @@ void	Convert::cast_to_char()
 		std::cout << "impossible" << std::endl;
 }
 
-void	Convert::cast_to_double()
+void	Convert::cast_from_double()
 {
 	double ret;
 }
 
-void	Convert::cast_to_float()
+void	Convert::cast_from_float()
 {
 	float ret;
-}
+} */
