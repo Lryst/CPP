@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:05:06 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/03 15:41:35 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/03 17:00:02 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::string	filename;
 
 	filename = this->_target + "_shrubbery";
-	std::ofstream ofs(filename);
+	std::ofstream ofs(filename.c_str());
 	try
 	{
 		Form::execute(executor);
