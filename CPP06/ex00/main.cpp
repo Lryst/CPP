@@ -6,42 +6,46 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 19:28:28 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/06 01:01:33 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/06 03:00:56 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-void	get_type(char *av)
+static int	check_types(char *av)
 {
 	bool f;
-	bool p;
+	int p;
+	std::string tmp;
+	unsigned int i;
 	
 	f = false;
 	p = false;
-	if (av == "-inf" || av == "+inf" || av == "nan")
+	tmp = av;
+	i = 0;
+	if (strcmp(av, "-inf") ==  0 || strcmp(av, "+inf") ==  0 || strcmp(av, "nan") ==  0)
 		return 5;
-	if (av == "-inff" || av == "+inff" || av == "nanf")
+	if (strcmp(av, "-inff") ==  0 || strcmp(av, "+inff") ==  0 || strcmp(av, "nanf") ==  0)
 		return 6;
-	if (av.length() == 1 && !av[0].isdigit())
+	if (tmp.length() == 1 && !isdigit(av[0]))
 		return 1;
-	if (!av[0].isdigit() && av[0] != '-' && av[0] != "+")
+	if (!isdigit(av[0]) && av[0] != '-' && av[0] != '+')
 		return (-1);
-	if (av[av.length()] == 'f')
+	if (av[tmp.length()] == 'f')
 	{
-		av = av.substr(0, av.length() -1);
+		tmp = tmp.substr(0, tmp.length() -1);
 		f = 1;
 	}
-	for (int i = 1; i < av.length(); i++)
+	while (++i < tmp.length())
 	{
-		if (!av[i].isdigit())
+		if (!isdigit(av[i]))
 		{
 			if (av[i] == '.' && p)
 				p++;
 			return -1;
 		}
 	}
-	if (av.length() == i)
+	if (tmp.length() == i)
 	{
 		if (p)
 		{
@@ -64,7 +68,7 @@ int main(int ac, char **av)
 	if (av[1])
 	{
 		Convert	conv(av[1]);
-		conv.setType(get_type(av[1]));
+		conv.setType(check_types(av[1]));
 		if (conv.getType() > 0)
 			return (conv.casting());
 	}

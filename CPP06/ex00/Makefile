@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/05 19:26:19 by lryst             #+#    #+#              #
-#    Updated: 2021/08/05 19:28:45 by lryst            ###   ########.fr        #
+#    Updated: 2021/08/06 02:35:41 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = convert
 
 SRCS =	main.cpp \
-
+		Convert.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:44:07 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/06 01:04:27 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/06 03:56:32 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <iostream>
 # include <string>
 # include <cctype>
+# include <cstdlib>
+# include <iomanip>
 
 class Convert
 {
@@ -26,15 +28,19 @@ class Convert
 	public :
 		Convert(std::string cast);
 		Convert(Convert const & cpy);
-		Convert const & operator=(Convert consy & src);
+		Convert const & operator=(Convert const & src);
 		~Convert();
 		
-		/* void	cast_from_int();
-		void	cast_from_char();
-		void	cast_from_double();
-		void	cast_from_float(); */
+		int	cast_from_int();
+		int	cast_from_char();
+		int	cast_from_double();
+		int	cast_from_float();
+		int	cast_from_spe();
+		int	cast_from_spef();
 
-		void	setType();
+		void	setType(int  type);
+
+		std::string	getCast();
 		int		getType();
 		
 		int		casting();
