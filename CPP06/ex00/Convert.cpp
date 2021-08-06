@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 22:48:32 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/06 04:00:16 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/06 04:21:20 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	Convert::cast_from_char()
 	char ret;
 
 	ret = this->_cast[0];
-	std::cout << "char : " << ret << std::endl;
+	std::cout << "char : '" << ret << "'" << std::endl;
 	std::cout << "int : " << static_cast<int>(ret) << std::endl;
 	std::cout << "float : " << static_cast<float>(ret) << std::endl;
 	std::cout << "double : " << static_cast<double>(ret) << std::endl;
@@ -112,7 +112,7 @@ int	Convert::cast_from_double()
 		std::cout << "char : Non displayble" <<std::endl;
 	else
 		std::cout << "char : '" << static_cast<char>(ret) << "'" << std::endl;
-	if (ret > -2147483648.0 || ret < 2147483647.0)
+	if (ret < -2147483648.0 || ret > 2147483647.0)
 		std::cout << "int : impossible" <<std::endl;
 	else
 		std::cout << "int : " << static_cast<int>(ret) << std::endl;
@@ -134,7 +134,7 @@ int	Convert::cast_from_float()
 	if (tmp < 33 || tmp > 126)
 		std::cout << "char : impossible" << std::endl;
 	else
-		std::cout << "char : " << static_cast<char>(ret) << std::endl;
+		std::cout << "char : '" << static_cast<char>(ret) << "'" << std::endl;
 	if (tmp > INT_MAX || tmp < INT_MIN)
 		std::cout << "int : impossible" << std::endl;
 	else

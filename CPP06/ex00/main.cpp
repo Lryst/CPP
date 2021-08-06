@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 19:28:28 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/06 03:00:56 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/06 04:20:11 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	check_types(char *av)
 		return 1;
 	if (!isdigit(av[0]) && av[0] != '-' && av[0] != '+')
 		return (-1);
-	if (av[tmp.length()] == 'f')
+	if (av[tmp.length() - 1] == 'f')
 	{
 		tmp = tmp.substr(0, tmp.length() -1);
 		f = 1;
@@ -40,9 +40,9 @@ static int	check_types(char *av)
 	{
 		if (!isdigit(av[i]))
 		{
-			if (av[i] == '.' && p)
-				p++;
-			return -1;
+			if (av[i] == '.' && p == true)
+				return -1;
+			p = true;
 		}
 	}
 	if (tmp.length() == i)
@@ -64,7 +64,10 @@ int main(int ac, char **av)
 
 	type = -2;
 	if (ac != 2)
+	{
 		std::cout << "Error : Bad number argument." << std::endl;
+		return 0;
+	}
 	if (av[1])
 	{
 		Convert	conv(av[1]);
