@@ -34,14 +34,16 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return(0);
     }
     try
     {
-        numbers[MAX_VAL] = 0;
+        numbers[MAX_VAL - 1] = 0;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return(0);
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -81,6 +83,7 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return (0);
     }
     try
     {
@@ -89,12 +92,13 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return (0);
     }
 
     for (int i = 0; i < 6; i++)
     {
         character[i] = rand();
     }
-    delete [] mirror2;//
+    delete [] mirror2;// */
     return 0;
 }

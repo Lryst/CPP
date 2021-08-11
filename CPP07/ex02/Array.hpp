@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lryst <lryst@student.42f.r>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:17:38 by lryst             #+#    #+#             */
-/*   Updated: 2021/08/11 15:07:05 by lryst            ###   ########.fr       */
+/*   Updated: 2021/08/11 16:02:08 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
+# include <cstdlib>
 # include <iostream>
 # include <exception>
 
@@ -29,7 +30,7 @@ class Array
 		~Array();
 
 		Array<T> & operator=(Array const src);
-		T & operator[](unsigned int nbr);
+		T & operator[](unsigned int nbr) const;
 		
 		unsigned int	size();
 		void			print_array() const;
@@ -61,12 +62,15 @@ Array<T>::Array(Array const & cpy)
 template <class T>
 Array<T>::~Array()
 {
-	delete [] this->_t;
+	if (this->_t)
+		delete[] this->_t;
 }
+
 template <class T>
 Array<T>	& Array<T>::operator=(Array const src)
 {
-	delete [] this->_t;
+	if (this->_t)
+		delete [] this->_t;
 	this->_t = new T[src._len];
 	this->_len = src._len;
 	for (unsigned int i = 0; i < this->_len; i++)
@@ -75,7 +79,7 @@ Array<T>	& Array<T>::operator=(Array const src)
 }
 
 template <class T>
-T & Array<T>::operator[](unsigned int nbr)
+T & Array<T>::operator[](unsigned int nbr) const
 {
 	if (nbr > this->_len)
 		throw std::exception();
