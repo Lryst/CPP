@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -18,7 +18,7 @@ int main(int, char**)
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
-
+    numbers.print_array();
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -29,7 +29,7 @@ int main(int, char**)
     }
     try
     {
-        numbers[-2] = 0;
+        numbers[2] = 0;
     }
     catch(const std::exception& e)
     {
@@ -49,5 +49,52 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+
+    Array<char> character(6);
+    char* mirror2 = new char[6];
+    //srand(time(NULL));
+    for (int i = 0; i < 6; i++)
+    {
+        const char value = i + 65;
+        character[i] = value;
+        mirror2[i] = value;
+    }
+    //SCOPE
+    {
+        Array<char> tmp = character;
+        Array<char> test(tmp);
+    }
+
+    for (int i = 0; i < 6; i++)
+    {
+        if (mirror2[i] != character[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    character.print_array();
+    try
+    {
+        character[2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        character[2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < 6; i++)
+    {
+        character[i] = rand();
+    }
+    delete [] mirror2;//
     return 0;
 }
